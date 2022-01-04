@@ -1,0 +1,246 @@
+
+{% load static %}
+
+<link REL="SHORTCUT ICON" HREF="{% static 'images/logo.JPG' %}"/>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/icarus/style/default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}">
+    <link rel="stylesheet" href="{% static 'md_css/colorful.css' %}">
+    <link rel="stylesheet" href="{% static 'http_use/http_use.fontawesome.com_releases_v5.15.2_css_all.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'http_use/http_cdn.jsdelivr.net_npm_highlight.js_9.12.0_styles_atom-one-light.css' %}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro">
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/search/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/search/normalize.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/search/demo.css' %}"/>
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/search/component.css' %}"/>
+
+    <script type="text/javascript" async=""
+            src="{% static 'http_cdn_js/http_www.google-analytics.com_analytics.js' %}"></script>
+    <style>body > .footer, body > .navbar, body > .section {
+        opacity: 0
+    }
+    </style>
+
+</head>
+
+<body class="is-3-column  pace-done">
+
+<nav class="navbar navbar-main"
+     style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform: translateY(0px);">
+
+    <div class="container">
+
+        <div id="morphsearch" class="morphsearch">
+            <form class="morphsearch-form"></i>
+                <input class="morphsearch-input" type="search" placeholder="Search..."/>
+                <button class="morphsearch-submit" type="submit">Search</button>
+
+            </form>
+            <div class="morphsearch-content">
+                <div class="dummy-column">
+                    <h2>People</h2>
+                    <a class="dummy-media-object" href="http://twitter.com/SaraSoueidan">
+                        <img src="img/thumbs/ResponsiveSVGs.png" alt="ResponsiveSVGs"/>
+                        <h3>Sara Soueidan</h3>
+                    </a>
+
+                </div>
+                <div class="dummy-column">
+                    <h2>Popular</h2>
+                    <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/05/page-preloading-effect/">
+                        <img src="img/thumbs/PagePreloadingEffect.png" alt="PagePreloadingEffect"/>
+                        <h3>Page Preloading Effect</h3>
+                    </a>
+                </div>
+                <div class="dummy-column">
+                    <h2>Recent</h2>
+                    <a class="dummy-media-object"
+                       href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/">
+                        <img src="img/thumbs/TooltipStylesInspiration.png" alt="TooltipStylesInspiration"/>
+                        <h3>Tooltip Styles Inspiration</h3>
+                    </a>
+                </div>
+            </div><!-- /morphsearch-content -->
+            <span class="morphsearch-close"></span>
+        </div><!-- /morphsearch -->
+
+        <div class="overlay"></div>
+    </div>
+</nav>
+
+
+<script type="text/javascript" src="{% static 'css-theme/search/classie.js' %}"></script>
+<script type="text/javascript">
+    (function () {
+        var morphSearch = document.getElementById('morphsearch'),
+            input = morphSearch.querySelector('input.morphsearch-input'),
+            ctrlClose = morphSearch.querySelector('span.morphsearch-close'),
+            isOpen = isAnimating = false,
+            // show/hide search area
+            toggleSearch = function (evt) {
+                // return if open and the input gets focused
+                if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
+
+                var offsets = morphsearch.getBoundingClientRect();
+                if (isOpen) {
+                    classie.remove(morphSearch, 'open');
+
+                    // trick to hide input text once the search overlay closes
+                    // todo: hardcoded times, should be done after transition ends
+                    if (input.value !== '') {
+                        setTimeout(function () {
+                            classie.add(morphSearch, 'hideInput');
+                            setTimeout(function () {
+                                classie.remove(morphSearch, 'hideInput');
+                                input.value = '';
+                            }, 300);
+                        }, 500);
+                    }
+
+                    input.blur();
+                } else {
+                    classie.add(morphSearch, 'open');
+                }
+                isOpen = !isOpen;
+            };
+
+        // events
+        input.addEventListener('focus', toggleSearch);
+        ctrlClose.addEventListener('click', toggleSearch);
+        // esc key closes search overlay
+        // keyboard navigation events
+        document.addEventListener('keydown', function (ev) {
+            var keyCode = ev.keyCode || ev.which;
+            if (keyCode === 27 && isOpen) {
+                toggleSearch(ev);
+            }
+        });
+
+        /***** for demo purposes only: don't allow to submit the form *****/
+        morphSearch.querySelector('button[type="submit"]').addEventListener('click', function (ev) {
+            ev.preventDefault();
+        });
+    })();
+</script>
+
+
+{#{% block footer %}#}
+{#{% endblock footer %}#}
+
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_jquery_3.3.1_dist_jquery.js' %}"></script>
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_moment_2.22.2_min_moment-with-locales.js' %}"></script>
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_clipboard_2.0.4_dist_clipboard.js' %}"
+        defer=""></script>
+<script>moment.locale("en");</script>
+
+<script>var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};</script>
+<script src="{% static 'js/js/column.js' %}"></script>
+<script src="{% static 'js/js/animation.js' %}"></script>
+
+{#TODO 返回顶部按钮#}
+<a id="back-to-top" title="Back to top" href="javascript:;" class="card has-text-centered rise-up fade-in"
+   style="left: 1103.75px; width: 64px; bottom: 20px;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="{% static 'js/js/back_to_top.js' %}" defer=""></script>
+
+
+<!--!-->
+<!--!-->
+<!--!-->
+
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_cookieconsent_3.1.1_build_cookieconsent.min.js' %}"
+        defer></script>
+<script>window.addEventListener("load", () => {
+    window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+            message: "This website uses cookies to improve your experience.",
+            dismiss: "Got it!",
+            allow: "Allow cookies",
+            deny: "Decline",
+            link: "Learn more",
+            policy: "Cookie Policy",
+            href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+            popup: {
+                background: "#edeff5",
+                text: "#838391"
+            },
+            button: {
+                background: "#4b81e8"
+            },
+        },
+    });
+});</script>
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_lightgallery_1.6.8_dist_js_lightgallery.js' %}"
+        defer></script>
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_justifiedGallery_3.7.0_dist_js_jquery.justifiedGallery.js' %}"
+        defer></script>
+<script>window.addEventListener("load", () => {
+    if (typeof $.fn.lightGallery === 'function') {
+        $('.article').lightGallery({selector: '.gallery-item'});
+    }
+    if (typeof $.fn.justifiedGallery === 'function') {
+        if ($('.justified-gallery > p > .gallery-item').length) {
+            $('.justified-gallery > p > .gallery-item').unwrap();
+        }
+        $('.justified-gallery').justifiedGallery();
+    }
+});</script>
+<!--!-->
+<!--!-->
+<div id="outdated"><h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly.&amp;npsb;
+        <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my
+            browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div>
+<script src="{% static 'http_cdn_js/http_cdn.jsdelivr.net_npm_outdatedbrowser_1.1.5_outdatedbrowser_outdatedbrowser.js' %}"
+        defer></script>
+<script>window.addEventListener("load", function () {
+    outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'object-fit' // display on IE11 or below
+    });
+});</script><!--!--><!--!--><!--!-->
+<script src="{% static 'js/js/main.js' %}" defer></script>
+
+{% block search %}
+{% endblock search %}
+
+<script src="{% static 'js/js/insight.js' %}" defer></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        loadInsight({"contentUrl": "/hexo-theme-icarus/content.json"}, {
+            "hint": "Type something...",
+            "untitled": "(Untitled)",
+            "posts": "Posts",
+            "pages": "Pages",
+            "categories": "Categories",
+            "tags": "Tags"
+        });
+    });
+</script>
+
+</body>
+</html>
+

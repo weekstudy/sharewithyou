@@ -1,0 +1,21 @@
+
+a {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    font-family: Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    box-sizing: inherit;
+    text-decoration: none;
+    color: #4a4a4a;
+    line-height: 1.5;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 0.75rem;
+    margin: 0 0;
+}

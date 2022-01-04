@@ -1,0 +1,114 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>TOC</title>
+</head>
+<body>
+<div class="col-2 card d-none d-lg-block collapse" id="right-sidebar" style="z-index: 1; border-top-color: white">
+    <div class="sidebar2 is-affixed" id="sidebar2" style="position: relative;">
+        <div class="inner-wrapper-sticky" style="position: relative; transform: translate3d(0px, 0px, 0px);">
+            <div class="sidebar2__inner">
+                <div class="card-body font-body" style="padding: 10px 0 0 0;">
+
+                    <!-- 目录 -->
+                    <div id="sidebar" style="overflow: hidden">
+                        <div class="markdown-body editormd-preview-container" id="custom-toc-container">
+                            <div class="toc">
+                                <ul>
+                                    <li><a href="#_1" class="no-underline">文中的目录</a></li>
+                                    <li><a href="#_2" class="no-underline">任意位置的目录</a></li>
+                                    <li><a href="#_3" class="no-underline">总结</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- GitHub仓库的小卡片 -->
+
+                    <div class="card" style="display: flex">
+                        <div class="card-body">
+
+                            <h6 class="card-title">
+                                <a href="https://github.com/stacklens/django_blog_tutorial" target="_blank"
+                                   style="word-break: break-all;" class="no-underline color-lightgray">
+                                    django_blog_tutorial
+                                </a>
+                            </h6>
+
+                            <p class="card-text text-muted">教程示例代码</p>
+                            <p class="card-text mb-0">
+                                <iframe src="https://ghbtns.com/github-btn.html?user=stacklens&amp;repo=django_blog_tutorial&amp;type=star&amp;count=true"
+                                        frameborder="0" scrolling="0" width="100px" height="30px"
+                                        style="margin-top: 8px"></iframe>
+                            </p>
+                            <p class="card-text">
+                                <iframe src="https://ghbtns.com/github-btn.html?user=stacklens&amp;repo=django_blog_tutorial&amp;type=fork&amp;count=true&amp;v=2"
+                                        frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card mb-4 mt-4 hvr-glow" id="notice_card" style="display: flex">
+                        <div class="card-body font-body pb-0">
+                            <p class="card-title text-muted">
+                                <i class="fab fa-weixin"></i> 微信公众号
+                            </p>
+                            <p class="cark-text text-muted mb-0">文章同步更新，扫码关注我</p>
+
+
+                        </div>
+                        <div style="text-align: center">
+                            <img src="/static/img/it_wechat.jpg" alt="" class="card-img-bottom"
+                                 style="max-width: 180px">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <script>
+                    $(() => {
+                        $('div.toc a').addClass('no-underline')
+                    })
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'jquery.sticky-sidebar.min.js' %}"></script>
+
+<script>
+    $(() => {
+        $('#sidebar').stickySidebar({
+            topSpacing: 0,
+            bottomSpacing: 20,
+        });
+        $('#sidebar2').stickySidebar({
+            topSpacing: 0,
+            bottomSpacing: 20,
+        });
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1000) {
+                $('#notice_card,.aliyun_invite').fadeOut(2000);
+            } else {
+                $('#notice_card,.aliyun_invite').stop().fadeIn(1000);
+            }
+        }).scroll();
+    });
+</script>
+</body>
+</html>

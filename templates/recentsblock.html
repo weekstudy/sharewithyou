@@ -1,0 +1,63 @@
+{% load static %}
+
+<div class="card widget" data-type="recent-posts"
+     style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+    <div class="card-content"><h3 class="menu-label">Recents</h3>
+        <article class="media">
+            <figure class="media-left">
+                <a class="image" href="{% url 'articlesapp:show_article' 3 %}">
+                    <img src="{% static 'images/cover_imgs/vector_landscape_1.svg' %}"
+                         alt="Getting Started with Icarus"></a></figure>
+            <div class="media-content">
+                <p class="date">
+                    <time datetime="2021-12-21T00:00:00.000Z">2021-12-21</time>
+                </p>
+                <p class="title"><a href="/hexo-theme-icarus/uncategorized/getting-started-with-icarus/">Getting
+                    Started with Icarus</a></p></div>
+        </article>
+        <article class="media">
+            <figure class="media-left">
+                <a class="image" href="/hexo-theme-icarus/Configuration/icarus-user-guide-configuring-the-theme/"><img
+                    src="{% static 'images/cover_imgs/vector_landscape_2.svg' %}"
+                    alt="Icarus User Guide - Configuring the Theme"></a></figure>
+            <div class="media-content">
+                <p class="date">
+                    <time datetime="2020-03-01T00:00:00.000Z">2020-03-01</time>
+                </p>
+                <p class="title"><a
+                        href="/hexo-theme-icarus/Configuration/icarus-user-guide-configuring-the-theme/">Icarus
+                    User Guide - Configuring the Theme</a></p>
+                <p class="categories"><a href="/hexo-theme-icarus/categories/Configuration/">Configuration</a>
+                </p></div>
+        </article>
+        <article class="media">
+            <figure class="media-left"><a class="image" href="/hexo-theme-icarus/uncategorized/faq/"><img
+                    src="{% static 'images/cover_imgs/vector_landscape_3.svg' %}" alt="FAQ"></a></figure>
+            <div class="media-content">
+                <p class="date">
+                    <time datetime="2020-02-02T00:00:00.000Z">2020-02-02</time>
+                </p>
+                <p class="title"><a href="/hexo-theme-icarus/uncategorized/faq/">FAQ</a></p></div>
+        </article>
+        <article class="media">
+            <figure class="media-left"><a class="image"
+                                          href="/hexo-theme-icarus/uncategorized/cyberpunk-theme-variant/"><img
+                    src="/hexo-theme-icarus/gallery/covers/CP77-KV-en.jpg" alt="Cyberpunk Theme Variant"></a>
+            </figure>
+            <div class="media-content">
+                <p class="date">
+                    <time datetime="2020-02-01T00:00:00.000Z">2020-02-01</time>
+                </p>
+                <p class="title"><a href="/hexo-theme-icarus/uncategorized/cyberpunk-theme-variant/">Cyberpunk
+                    Theme Variant</a></p></div>
+        </article>
+        <article class="media">
+            <div class="media-content">
+                <p class="date">
+                    <time datetime="2020-01-01T00:00:00.000Z">2020-01-01</time>
+                </p>
+                <p class="title"><a href="/hexo-theme-icarus/uncategorized/upgrade-guide/">Upgrade Guide</a></p>
+            </div>
+        </article>
+    </div>
+</div>

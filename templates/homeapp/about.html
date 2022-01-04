@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block left_column %}
+    <div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1">
+        <div class="card widget" data-type="profile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <a href="{% url 'userprofile:login' %}">
+                                <figure class="image is-128x128 mx-auto mb-2">
+                                    <img class="avatar" src="{% static 'images/logo.JPG' %}"
+                                         alt="PPOffice"></figure>
+                            </a>
+                            <p class="title is-size-4 is-block" style="line-height:inherit;">Week · Study</p>
+                            <p class="is-size-6 is-block">Developer</p>
+                            <p class="is-size-6 is-flex justify-content-center"><i
+                                    class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div>
+                    </div>
+                </nav>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}"><p class="title">
+                            {{ num }}</p>
+                        </a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}">
+                            <p class="title">{{ cate_num }}</p></a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}">
+                            <p class="title">{{ tags_num }}</p></a>
+                        </div>
+                    </div>
+                </nav>
+                {% include 'connectblock.html' %}
+            </div>
+        </div>
+        {% include 'tocblock.html' %}
+        {% include 'linksblock.html' %}
+        <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3>
+                    <ul class="menu-list">
+                        {% for tmp_col,tmp_art in cate_articles.items %}
+                            <li><a class="level is-mobile" href="/categories/{{ tmp_art.2 }}"><span
+                                    class="level-start"><span class="level-item">{{ tmp_col }}</span></span><span
+                                    class="level-end"><span class="level-item tag">{{ tmp_art.1 }}</span></span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {# 在移动端使用的样式#}
+        {% include 'unkownblock.html' %}
+    </div>
+{% endblock left_column %}
+
+{% block mid_column %}
+    <div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen">
+        <div class="card"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <article class="card-content article" role="article">
+                <div class="content">
+                    <p align="center" class="mb-2">
+                        <img class="not-gallery-item" style="height:100px"
+                             src="{% static 'images/logo.JPG' %}">
+                        <br> A simple, delicate, and modern theme for Blog.
+                        <br>
+                        <a href="{% url 'homeapp:home' %}">Preview</a> |
+                        <a href="{% url 'homeapp:categories' %}">Documentation</a> |
+                        <a target="_blank" rel="noopener" href="https://github.com/weekstudy">Discuss
+                            on GitHub</a>
+                    </p>
+                    <article class="markdown-body entry-content container-lg f5" itemprop="text">
+
+
+                        <link rel="stylesheet" href="{% static 'css-theme/white/about.css'%}">
+                        <div class="memorial_day">
+                            <div class="time_axis" > </div>
+                                <ul>
+                                    <li class="n1"><a href="#" style="color: #3273dc">拜入山门</a>
+                                         <div class="dateview"><div class="arrowmy"><em></em><span></span>
+                                            </div>2014/09-2018/06</div>
+                                    </li>
+                                    <li class="n2"><a href="#" style="color: #3273dc">进入内门</a>
+                                        <div class="dateview"><div class="arrowmy"><em></em><span></span>
+                                            </div>2018/09-2021/06</div>
+                                    </li>
+
+                                    <li class="n3"><a href="#" style="color: #3273dc">初涉江湖</a>
+                                        <div class="dateview" >
+                                            <div class="arrowmy"><em></em><span></span></div>
+                                            2020/09-2021/01
+                                        </div>
+                                    </li>
+
+                                    <li class="n4"><a href="#" style="color: #3273dc">仗剑天涯</a>
+                                        <div class="dateview"><div class="arrowmy"><em></em><span></span>
+                                            </div>2021/07-至今
+                                        </div>
+                                    </li>
+                                     <li class="n5"><a href="#" style="color: #3273dc">未完待续</a>
+                                        <div class="dateview"><div class="arrowmy"><em></em><span></span>
+                                            </div>......
+                                        </div>
+                                    </li>
+                                </ul>
+
+                        </div>
+{#                        <p><img src="{% static 'images/sword2.png'%}" style="max-width: 100%;"></p>#}
+                        <p><a target="_blank" rel="noopener noreferrer"
+                              href="#">
+                            <img align="right" src="{% static 'images/icon/profile.gif'%}"
+                                width="500" alt="Github" style="max-width: 100%;"></a>
+                        </p>
+
+                        <h2 dir="auto">
+                            <a id="user-content--hey-there-im-weekstudy-" class="anchor" aria-hidden="true"
+                                          href="#-hey-there-im-weekstudy-">
+                            <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+                            </svg></a> Hey there! I'm weekstudy.
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://github.com/weekstudy/weekstudy/blob/main/icon/Hi.gif">
+                                <img src="{% static 'images/icon/Hi.gif'%}" width="25"
+                                style="max-width: 100%;"></a>
+                        </h2>
+                        <p dir="auto">
+                            <a href="mailto:zhouqiangweek@foxmail.com">
+                                <img src="https://camo.githubusercontent.com/0aaeb403a1498269764d756a58d2f551baeaf01e26193a3e0efb6a1f5491d0cd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d456d61696c2d6331343433383f7374796c653d666c61742d737175617265266c6f676f3d476d61696c266c6f676f436f6c6f723d7768697465266c696e6b3d6d61696c746f3a7a686f757169616e677765656b40666f786d61696c2e636f6d"
+                                    alt="Email Badge"
+                                    data-canonical-src="https://img.shields.io/badge/-Email-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:zhouqiangweek@foxmail.com"
+                                    style="max-width: 100%;"></a>
+                            <a href="https://space.bilibili.com/11915534" rel="nofollow">
+                                <img src="https://camo.githubusercontent.com/8b9bd972d0e83a3c4b9ee43b5375727934385fceb84671fe68c80696cf9bf349/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d42696c6942696c692d4431343937303f7374796c653d666c61742d737175617265266c6f676f3d42696c6962696c69266c6f676f436f6c6f723d7768697465266c696e6b3d68747470733a2f2f73706163652e62696c6962696c692e636f6d2f3131393135353334"
+                                    alt="Bilibili Badge"
+                                    data-canonical-src="https://img.shields.io/badge/-BiliBili-D14970?style=flat-square&amp;logo=Bilibili&amp;logoColor=white&amp;link=https://space.bilibili.com/11915534"
+                                    style="max-width: 100%;"></a>
+                            <a href="https://github.com/weekstudy">
+                                <img src="https://camo.githubusercontent.com/2b602f8fd223a8524f0f20c49c76a9247cbcfd02f7d3cae870cc22ebcc83ef27/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4769746875622d3233323332333f7374796c653d666c61742d737175617265266c6f676f3d476974687562266c6f676f436f6c6f723d7768697465266c696e6b3d68747470733a2f2f6769746875622e636f6d2f7765656b7374756479"
+                                    alt="Github Badge"
+                                    data-canonical-src="https://img.shields.io/badge/-Github-232323?style=flat-square&amp;logo=Github&amp;logoColor=white&amp;link=https://github.com/weekstudy"
+                                    style="max-width: 100%;"></a>
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://camo.githubusercontent.com/24de07e70d92d13be5e18d6a241f6b7624cdcc7be060715ed8768c6f8299e048/68747470733a2f2f76697369746f722d62616467652e6c616f62692e6963752f62616467653f706167655f69643d7765656b7374756479"><img
+                                    src="https://camo.githubusercontent.com/24de07e70d92d13be5e18d6a241f6b7624cdcc7be060715ed8768c6f8299e048/68747470733a2f2f76697369746f722d62616467652e6c616f62692e6963752f62616467653f706167655f69643d7765656b7374756479"
+                                    alt="visitors"
+                                    data-canonical-src="https://visitor-badge.laobi.icu/badge?page_id=weekstudy"
+                                    style="max-width: 100%;"></a>
+                        </p>
+                        <h3 dir="auto">
+                            <a id="user-content---about-me-" class="anchor" aria-hidden="true" href="#--about-me-">
+                            <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+                            </svg>
+                            </a> 👨🏻&zwj;💻 About Me
+                        </h3>
+                        <ul dir="auto">
+                            <li>
+                                <g-emoji class="g-emoji" alias="telescope"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f52d.png">
+                                    🔭
+                                </g-emoji> &nbsp; I’m currently learning OCR Application Development and PyQt5
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="thinking"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png">
+                                    🤔
+                                </g-emoji> &nbsp; Exploring new technologies and developing software solutions and quick
+                                hacks.
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="mortar_board"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png">
+                                    🎓
+                                </g-emoji> &nbsp; Studying Computer Science, computer programming and Mathematics.
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="briefcase"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bc.png">
+                                    💼
+                                </g-emoji> &nbsp; GUI development and front-end web developer.
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="seedling"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png">
+                                    🌱
+                                </g-emoji> &nbsp; Enthusiast in cyber Security and Artificial Intelligence .
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="writing_hand"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">
+                                    ✍️
+                                </g-emoji> &nbsp; Watching Anime and trying out latest design trends as hobbies/side
+                                hustles.
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="coffee"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2615.png">
+                                    ☕
+                                </g-emoji> &nbsp; I belive, a perfect cup of coffee can be the ultimate solution for any
+                                stress.
+                            </li>
+                        </ul>
+                        <h3 dir="auto"><a id="user-content--tech-stack" class="anchor" aria-hidden="true"
+                                          href="#-tech-stack">
+                            <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+                            </svg>
+                            </a>
+                            <g-emoji class="g-emoji" alias="hammer_and_wrench"
+                                     fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png">
+                                🛠
+                            </g-emoji>
+                            Tech Stack
+                        </h3>
+                        <ul dir="auto">
+                            <li>
+                                <g-emoji class="g-emoji" alias="computer"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">
+                                    💻
+                                </g-emoji> &nbsp; Python | C/C++
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="globe_with_meridians"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png">
+                                    🌐
+                                </g-emoji> &nbsp; Tensorflow | Pytorch | PaddlePaddle | Django
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="oil_drum"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e2.png">
+                                    🛢
+                                </g-emoji> &nbsp; MySQL
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="wrench"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">
+                                    🔧
+                                </g-emoji> &nbsp; Linux | PyCharm | Visual Studio code | Xcode | Git
+                            </li>
+                            <li>
+                                <g-emoji class="g-emoji" alias="desktop_computer"
+                                         fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a5.png">
+                                    🖥
+                                </g-emoji> &nbsp; Illustrator | Photoshop
+                            </li>
+                        </ul>
+                        <br>
+                        <p>
+                            <a target="_blank" rel="noopener noreferrer"
+                              href="https://camo.githubusercontent.com/b8daa7cad7df3220fd3bc2b3b7fab4b10aeb078d77c71dcb1b32636813780984/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d7765656b737475647926696e636c7564655f616c6c5f636f6d6d6974733d7472756526636f756e745f707269766174653d747275652673686f775f69636f6e733d74727565266c696e655f6865696768743d3230267469746c655f636f6c6f723d3741374144422669636f6e5f636f6c6f723d32323334414526746578745f636f6c6f723d4433443344332662675f636f6c6f723d302c3030303030302c313330463430"><img
+                                align="center"
+                                src="https://camo.githubusercontent.com/b8daa7cad7df3220fd3bc2b3b7fab4b10aeb078d77c71dcb1b32636813780984/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d7765656b737475647926696e636c7564655f616c6c5f636f6d6d6974733d7472756526636f756e745f707269766174653d747275652673686f775f69636f6e733d74727565266c696e655f6865696768743d3230267469746c655f636f6c6f723d3741374144422669636f6e5f636f6c6f723d32323334414526746578745f636f6c6f723d4433443344332662675f636f6c6f723d302c3030303030302c313330463430"
+                                alt="weekstudy's Github Stats"
+                                data-canonical-src="https://github-readme-stats.vercel.app/api?username=weekstudy&amp;include_all_commits=true&amp;count_private=true&amp;show_icons=true&amp;line_height=20&amp;title_color=7A7ADB&amp;icon_color=2234AE&amp;text_color=D3D3D3&amp;bg_color=0,000000,130F40"
+                                style="max-width: 100%;"></a>
+                        </p>
+                        <br>
+                        <p dir="auto"><a href="https://github.com/weekstudy/github-readme-stats">
+                            <img src="https://camo.githubusercontent.com/2f61188ad2046d0edd405ceba5bf2863a23ba4bee35b5ebb89152cf1775ae18d/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d7765656b7374756479266c61796f75743d636f6d7061637426746578745f636f6c6f723d6461663764632662675f636f6c6f723d313531353135"
+                                alt="Top Langs"
+                                data-canonical-src="https://github-readme-stats.vercel.app/api/top-langs/?username=weekstudy&amp;layout=compact&amp;text_color=daf7dc&amp;bg_color=151515"
+                                style="max-width: 100%;"></a>
+                        </p>
+                        <h3 dir="auto"><a id="user-content---connect-with-me-" class="anchor" aria-hidden="true"
+                                          href="#--connect-with-me-"></a>
+                        </h3>
+
+                    </article>
+
+                    <p>This theme of Blog is licensed under the MIT License - see the <a target="_blank" rel="noopener"
+                                                                                   href="https://github.com/ppoffice/hexo-theme-icarus/blob/master/LICENSE">LICENSE</a>
+                        file for details.</p>
+                    <script>
+                        document.querySelectorAll('.not-gallery-item')
+                            .forEach(el => {
+                                if (!el.dataset.src) {
+                                    return;
+                                }
+                                const img = document.createElement('img');
+                                img.style = 'display:none !important;';
+                                img.src = el.dataset.src;
+                                img.addEventListener('error', () => {
+                                    img.remove();
+                                    el.style.color = 'inherit';
+                                    el.style.backgroundImage = 'none';
+                                    el.style.background = 'none';
+                                });
+                                img.addEventListener('load', () => {
+                                    img.remove();
+                                });
+                                document.body.appendChild(img);
+                            });
+                    </script>
+                </div>
+                <div class="article-licensing box">
+                    <div class="licensing-title"><p><a
+                            href="http://ppoffice.github.io/hexo-theme-icarus/about/index.html">http://ppoffice.github.io/hexo-theme-icarus/about/index.html</a>
+                    </p></div>
+                    <div class="licensing-meta level is-mobile">
+                        <div class="level-left">
+                            <div class="level-item is-narrow">
+                                <div><h6>Author</h6>
+                                    <p>PPOffice</p></div>
+                            </div>
+                            <div class="level-item is-narrow">
+                                <div><h6>Posted on</h6>
+                                    <p>2021-09-06</p></div>
+                            </div>
+                            <div class="level-item is-narrow">
+                                <div><h6>Licensed under</h6>
+                                    <p><a class="icons" rel="noopener" target="_blank" title="Creative Commons"
+                                          href="https://creativecommons.org/"><i
+                                            class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener"
+                                                                                            target="_blank"
+                                                                                            title="CC BY-NC-SA 4.0"
+                                                                                            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC
+                                        BY-NC-SA 4.0</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sharethis-inline-share-buttons st-center  st-inline-share-buttons st-animated" id="st-1">
+                    <div class="st-total ">
+                        <span class="st-label">1.2k</span>
+                        <span class="st-shares">
+    Shares
+  </span>
+                    </div>
+                    <div class="st-btn st-first" data-network="facebook" style="display: inline-block;">
+                        <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="twitter" style="display: inline-block;">
+                        <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="pinterest" style="display: inline-block;">
+                        <img alt="pinterest sharing button" src="https://platform-cdn.sharethis.com/img/pinterest.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="email" style="display: inline-block;">
+                        <img alt="email sharing button" src="https://platform-cdn.sharethis.com/img/email.svg">
+
+                    </div>
+                    <div class="st-btn st-last" data-network="sharethis" style="display: inline-block;">
+                        <img alt="sharethis sharing button" src="https://platform-cdn.sharethis.com/img/sharethis.svg">
+
+                    </div>
+                </div>
+                <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ab6f60ace89f00013641890&amp;product=inline-share-buttons"
+                        defer=""></script>
+            </article>
+        </div><!--!--><!--!--></div>
+{% endblock mid_column %}
+
+{#{% block right-column %}#}
+{#    <div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3">#}
+{#        <div class="card widget" data-type="recent-posts"#}
+{#             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">#}
+{#            <div class="card-content"><h3 class="menu-label">Recents</h3>#}
+{#                {% for article in recent_articles %}#}
+{#                    <article class="media">#}
+{#                        {% if article.avatar_svg %}#}
+{#                            <figure class="media-left">#}
+{#                                <a class="image" href="{% url 'articlesapp:show_article' article.id %}">#}
+{#                                    <img src="{{ article.avatar_svg.url }}"#}
+{#                                         alt="{{ article.title }}"></a>#}
+{#                            </figure>#}
+{#                        {% endif %}#}
+{#                        <div class="media-content">#}
+{#                            <p class="title"><a#}
+{#                                    href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>#}
+{#                            </p>#}
+{#                            <p class="date">{{ article.author }} </p>#}
+{##}
+{#                            <p class="date">{{ article.created|date:"Y-m-d" }} </p>#}
+{#                        </div>#}
+{#                    </article>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="card widget" data-type="archives"#}
+{#             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">#}
+{#            <div class="card-content">#}
+{#                <div class="menu"><h3 class="menu-label">Archives</h3>#}
+{#                    <ul class="menu-list">#}
+{#                        {% for month,art in info_by_month_years.items %}#}
+{#                            <li>#}
+{#                                <a class="level is-mobile" href="/archives/{{ art.1 }}/{{ art.0 }}">#}
+{#                        <span class="level-start">#}
+{#                            <span class="level-item">{{ month }} {{ art.1 }}</span>#}
+{#                        </span>#}
+{#                                    <span class="level-end">#}
+{#                            <span class="level-item tag">{{ art.2 }}</span>#}
+{#                        </span>#}
+{#                                </a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% include 'tagsblock.html' %}#}
+{#    </div>#}
+{#{% endblock right-column %}#}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+
+{% block search %}
+    <div class="searchbox">
+        <div class="searchbox-container">
+            <div class="searchbox-header">
+                <div class="searchbox-input-container">
+                    <form method="get" >
+                        <input class="searchbox-input" name="search" type="text" placeholder="Type something..." >
+                    </form>
+                </div>
+                <a class="searchbox-close" href="javascript:;">×</a></div>
+                <div class="searchbox-body">
+                    <section class="searchbox-result-section">
+                        <header>Posts</header>
+                        {% for article in article_list|slice:":5" %}
+                        <a class="searchbox-result-item"
+                           href="{% url 'articlesapp:show_article' article.id%}">
+                            <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title"> {{ article.title }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-preview">{{ article.body|slice:'100' }}</span>
+                            </span>
+                        </a>
+
+                        {% endfor %}
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Pages</header>
+                        <a class="searchbox-result-item" href="{% url 'homeapp:home' %}">
+                            <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">(Untitled)</span>
+                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for Blog. Preview | Documentation | D</span>
+                            </span>
+                        </a>
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Categories</header>
+                         {% for cate_key, article_info in  cate_articles.items %}
+                            <a class="searchbox-result-item" href="/categories/{{ article_info.2 }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                                    <span class="searchbox-result-content">
+                                        <span class="searchbox-result-title">{{ cate_key }}</span>
+                                    </span>
+                            </a>
+                         {% endfor %}
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Tags</header>
+                        {% for tag_name,article_info in tags_articles.items %}
+                            <a class="searchbox-result-item" href="/tags/{{ tag_name }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                                <span class="searchbox-result-content">
+                                    <span class="searchbox-result-title">{{ tag_name }}
+                                    </span>
+                                </span>
+                            </a>
+                        {% endfor %}
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock search %}

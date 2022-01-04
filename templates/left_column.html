@@ -1,0 +1,286 @@
+{% load static %}
+
+{#{% block left_column %}#}
+    <div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1">
+        <div class="card widget" data-type="profile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <figure class="image is-128x128 mx-auto mb-2"><img class="avatar"
+                                                                               src="{% static 'images/logo.JPG' %}"
+                                                                               alt="PPOffice"></figure>
+                            <p class="title is-size-4 is-block" style="line-height:inherit;">Janue · Zhou</p>
+                            <p class="is-size-6 is-block">Developer</p>
+                            <p class="is-size-6 is-flex justify-content-center"><i
+                                    class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div>
+                    </div>
+                </nav>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}"><p class="title">
+                            39TODO</p>
+                        </a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}"><p class="title">
+                            9</p></a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}"><p class="title">4</p></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/weekstudy"
+                                      target="_blank" rel="noopener">Follow</a></div>
+               <div class="level is-mobile is-multiline">
+                    <a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github"
+                       href="https://github.com/weekstudy"><i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener"
+                       title="wechat" href="{% static 'images/weixin.jpg' %}"><i class="fab fa-weixin fa-2x"></i>
+                    </a>
+                    <a class="level-item button is-transparent" target="_blank" rel="noopener"
+                        title="weibo" href="https://weibo.com/u/5034013030"><i class="fab fa-weibo fa-2x"></i> </a>
+                    <a title="Dribbble" href="mailto:zhouqiangweek@foxmail.com"><i class="fa fa-envelope fa-2x" style="color:grey"></i></a>
+                    <a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener"
+                        title="RSS" href="{% url 'homeapp:home' %}"><i class="fas fa-rss fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div><!--!-->
+        <div class="card widget" id="toc" data-type="toc"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Catalogue</h3>
+                    <ul class="menu-list">
+                        <li><a class="level is-mobile is-active" href="javascript:;" data-href="#cd-Installation"><span
+                                class="level-left"><span class="level-item">1</span><span class="level-item">💿 Installation</span></span></a>
+                        </li>
+                        <li><a class="level is-mobile" href="javascript:;" data-href="#gift-Features"><span
+                                class="level-left"><span class="level-item">2</span><span
+                                class="level-item">🎁 Features</span></span></a>
+                            <ul class="menu-list">
+                                <li><a class="level is-mobile" href="javascript:;" data-href="#Cyberpunk-Theme-Variant"><span
+                                        class="level-left"><span class="level-item">2.1</span><span class="level-item">Cyberpunk Theme Variant</span></span></a>
+                                </li>
+                                <li><a class="level is-mobile" href="javascript:;"
+                                       data-href="#Extensive-Plugin-Support"><span class="level-left"><span
+                                        class="level-item">2.2</span><span
+                                        class="level-item">Extensive Plugin Support</span></span></a></li>
+                                <li><a class="level is-mobile" href="javascript:;" data-href="#Colorful-Code-Highlight"><span
+                                        class="level-left"><span class="level-item">2.3</span><span class="level-item">Colorful Code Highlight</span></span></a>
+                                </li>
+                                <li><a class="level is-mobile" href="javascript:;"
+                                       data-href="#Flexible-Theme-Configuration"><span class="level-left"><span
+                                        class="level-item">2.4</span><span class="level-item">Flexible Theme Configuration</span></span></a>
+                                </li>
+                                <li><a class="level is-mobile" href="javascript:;" data-href="#Responsive-Layout"><span
+                                        class="level-left"><span class="level-item">2.5</span><span class="level-item">Responsive Layout</span></span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="level is-mobile" href="javascript:;" data-href="#hammer-Development"><span
+                                class="level-left"><span class="level-item">3</span><span class="level-item">🔨 Development</span></span></a>
+                        </li>
+                        <li><a class="level is-mobile" href="javascript:;" data-href="#tada-Contribute"><span
+                                class="level-left"><span class="level-item">4</span><span class="level-item">🎉 Contribute</span></span></a>
+                        </li>
+                        <li><a class="level is-mobile" href="javascript:;" data-href="#memo-License"><span
+                                class="level-left"><span class="level-item">5</span><span
+                                class="level-item">📝 License</span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <style>#toc .menu-list > li > a.is-active + .menu-list {
+                display: block;
+            }
+
+            #toc .menu-list > li > a + .menu-list {
+                display: none;
+            }</style>
+            <script src="/hexo-theme-icarus/js/toc.js" defer=""></script>
+        </div>
+        <div class="card widget" data-type="links"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Links</h3>
+                    <ul class="menu-list">
+                        <li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span
+                                class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span
+                                class="level-item tag">hexo.io</span></span></a></li>
+                        <li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span
+                                class="level-left"><span class="level-item">Bulma</span></span><span
+                                class="level-right"><span class="level-item tag">bulma.io</span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3>
+                    <ul class="menu-list">
+                        <li><a class="level is-mobile" href="/hexo-theme-icarus/categories/Configuration/"><span
+                                class="level-start"><span class="level-item">Configuration</span></span><span
+                                class="level-end"><span class="level-item tag">4</span></span></a></li>
+                        <li><a class="level is-mobile" href="/hexo-theme-icarus/categories/Plugins/"><span
+                                class="level-start"><span class="level-item">Plugins</span></span><span
+                                class="level-end"><span class="level-item tag">12</span></span></a>
+                            <ul>
+                                <li><a class="level is-mobile"
+                                       href="/hexo-theme-icarus/categories/Plugins/Analytics/"><span
+                                        class="level-start"><span class="level-item">Analytics</span></span><span
+                                        class="level-end"><span class="level-item tag">2</span></span></a></li>
+                                <li><a class="level is-mobile"
+                                       href="/hexo-theme-icarus/categories/Plugins/Comment/"><span
+                                        class="level-start"><span class="level-item">Comment</span></span><span
+                                        class="level-end"><span class="level-item tag">2</span></span></a></li>
+                                <li><a class="level is-mobile"
+                                       href="/hexo-theme-icarus/categories/Plugins/Donation/"><span class="level-start"><span
+                                        class="level-item">Donation</span></span><span class="level-end"><span
+                                        class="level-item tag">2</span></span></a></li>
+                                <li><a class="level is-mobile" href="/hexo-theme-icarus/categories/Plugins/Other/"><span
+                                        class="level-start"><span class="level-item">Other</span></span><span
+                                        class="level-end"><span class="level-item tag">2</span></span></a></li>
+                                <li><a class="level is-mobile"
+                                       href="/hexo-theme-icarus/categories/Plugins/Search/"><span
+                                        class="level-start"><span class="level-item">Search</span></span><span
+                                        class="level-end"><span class="level-item tag">2</span></span></a></li>
+                                <li><a class="level is-mobile" href="/hexo-theme-icarus/categories/Plugins/Share/"><span
+                                        class="level-start"><span class="level-item">Share</span></span><span
+                                        class="level-end"><span class="level-item tag">2</span></span></a></li>
+                            </ul>
+                        </li>
+                        <li><a class="level is-mobile" href="/hexo-theme-icarus/categories/Widgets/"><span
+                                class="level-start"><span class="level-item">Widgets</span></span><span
+                                class="level-end"><span class="level-item tag">2</span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column-right-shadow is-hidden-widescreen">
+            <div class="card widget" data-type="recent-posts"
+                 style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+                <div class="card-content"><h3 class="menu-label">Recents</h3>
+                    <article class="media">
+                        <figure class="media-left"><a class="image"
+                                                      href="/hexo-theme-icarus/uncategorized/getting-started-with-icarus/"><img
+                                src="/hexo-theme-icarus/gallery/covers/vector_landscape_1.svg"
+                                alt="Getting Started with Icarus"></a></figure>
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2020-04-01T00:00:00.000Z">2020-04-01</time>
+                            </p>
+                            <p class="title"><a href="/hexo-theme-icarus/uncategorized/getting-started-with-icarus/">Getting
+                                Started with Icarus</a></p></div>
+                    </article>
+                    <article class="media">
+                        <figure class="media-left"><a class="image"
+                                                      href="/hexo-theme-icarus/Configuration/icarus-user-guide-configuring-the-theme/"><img
+                                src="/hexo-theme-icarus/gallery/covers/vector_landscape_2.svg"
+                                alt="Icarus User Guide - Configuring the Theme"></a></figure>
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2020-03-01T00:00:00.000Z">2020-03-01</time>
+                            </p>
+                            <p class="title"><a
+                                    href="/hexo-theme-icarus/Configuration/icarus-user-guide-configuring-the-theme/">Icarus
+                                User Guide - Configuring the Theme</a></p>
+                            <p class="categories"><a
+                                    href="/hexo-theme-icarus/categories/Configuration/">Configuration</a></p></div>
+                    </article>
+                    <article class="media">
+                        <figure class="media-left"><a class="image" href="/hexo-theme-icarus/uncategorized/faq/"><img
+                                src="/hexo-theme-icarus/gallery/covers/vector_landscape_3.svg" alt="FAQ"></a></figure>
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2020-02-02T00:00:00.000Z">2020-02-02</time>
+                            </p>
+                            <p class="title"><a href="/hexo-theme-icarus/uncategorized/faq/">FAQ</a></p></div>
+                    </article>
+                    <article class="media">
+                        <figure class="media-left"><a class="image"
+                                                      href="/hexo-theme-icarus/uncategorized/cyberpunk-theme-variant/"><img
+                                src="/hexo-theme-icarus/gallery/covers/CP77-KV-en.jpg"
+                                alt="Cyberpunk Theme Variant"></a></figure>
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2020-02-01T00:00:00.000Z">2020-02-01</time>
+                            </p>
+                            <p class="title"><a href="/hexo-theme-icarus/uncategorized/cyberpunk-theme-variant/">Cyberpunk
+                                Theme Variant</a></p></div>
+                    </article>
+                    <article class="media">
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2020-01-01T00:00:00.000Z">2020-01-01</time>
+                            </p>
+                            <p class="title"><a href="/hexo-theme-icarus/uncategorized/upgrade-guide/">Upgrade Guide</a>
+                            </p></div>
+                    </article>
+                </div>
+            </div>
+            <div class="card widget" data-type="archives"
+                 style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+                <div class="card-content">
+                    <div class="menu"><h3 class="menu-label">Archives</h3>
+                        <ul class="menu-list">
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2020/04/"><span
+                                    class="level-start"><span class="level-item">April 2020</span></span><span
+                                    class="level-end"><span class="level-item tag">1</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2020/03/"><span
+                                    class="level-start"><span class="level-item">March 2020</span></span><span
+                                    class="level-end"><span class="level-item tag">1</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2020/02/"><span
+                                    class="level-start"><span class="level-item">February 2020</span></span><span
+                                    class="level-end"><span class="level-item tag">2</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2020/01/"><span
+                                    class="level-start"><span class="level-item">January 2020</span></span><span
+                                    class="level-end"><span class="level-item tag">1</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2018/01/"><span
+                                    class="level-start"><span class="level-item">January 2018</span></span><span
+                                    class="level-end"><span class="level-item tag">1</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2017/01/"><span
+                                    class="level-start"><span class="level-item">January 2017</span></span><span
+                                    class="level-end"><span class="level-item tag">8</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2016/01/"><span
+                                    class="level-start"><span class="level-item">January 2016</span></span><span
+                                    class="level-end"><span class="level-item tag">12</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2015/01/"><span
+                                    class="level-start"><span class="level-item">January 2015</span></span><span
+                                    class="level-end"><span class="level-item tag">7</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2014/01/"><span
+                                    class="level-start"><span class="level-item">January 2014</span></span><span
+                                    class="level-end"><span class="level-item tag">4</span></span></a></li>
+                            <li><a class="level is-mobile" href="/hexo-theme-icarus/archives/2013/01/"><span
+                                    class="level-start"><span class="level-item">January 2013</span></span><span
+                                    class="level-end"><span class="level-item tag">2</span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card widget" data-type="tags"
+                 style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+                <div class="card-content">
+                    <div class="menu"><h3 class="menu-label">Tags</h3>
+                        <div class="field is-grouped is-grouped-multiline">
+                            <div class="control"><a class="tags has-addons" href="/hexo-theme-icarus/tags/Demo/"><span
+                                    class="tag">Demo</span><span class="tag">15</span></a></div>
+                            <div class="control"><a class="tags has-addons"
+                                                    href="/hexo-theme-icarus/tags/Getting-Started/"><span class="tag">Getting Started</span><span
+                                    class="tag">4</span></a></div>
+                            <div class="control"><a class="tags has-addons"
+                                                    href="/hexo-theme-icarus/tags/Icarus-User-Guide/"><span class="tag">Icarus User Guide</span><span
+                                    class="tag">12</span></a></div>
+                            <div class="control"><a class="tags has-addons"
+                                                    href="/hexo-theme-icarus/tags/Icarus%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97/"><span
+                                    class="tag">Icarus用户指南</span><span class="tag">12</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#{% endblock left_column %}#}

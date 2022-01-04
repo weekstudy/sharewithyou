@@ -1,0 +1,23 @@
+
+
+<div class="card widget" data-type="archives"
+     style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+    <div class="card-content">
+        <div class="menu"><h3 class="menu-label">Archives</h3>
+            <ul class="menu-list">
+                {% for month,art in articles_by_month_years.items %}
+                    <li>
+                        <a class="level is-mobile" href="/archives/{{ art.1 }}/{{ art.0 }}">
+                        <span class="level-start">
+                            <span class="level-item">{{ month }} {{ art.1 }}</span>
+                        </span>
+                            <span class="level-end">
+                            <span class="level-item tag">{{ art.2 }}</span>
+                        </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

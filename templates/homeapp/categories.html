@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block left_column %}
+    <div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1">
+        <div class="card widget" data-type="profile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <a href="{% url 'userprofile:login' %}">
+                                <figure class="image is-128x128 mx-auto mb-2">
+                                    <img class="avatar" src="{% static 'images/logo.JPG' %}"
+                                         alt="PPOffice"></figure>
+                            </a>
+                            <p class="title is-size-4 is-block" style="line-height:inherit;">Week · Study</p>
+                            <p class="is-size-6 is-block">Developer</p>
+                            <p class="is-size-6 is-flex justify-content-center">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>Earth, Solar System</span>
+                            </p>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}">
+                            <p class="title"> {{ num }}</p>
+                        </a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}"><p class="title">
+                            {{ cate_num }}</p></a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}"><p class="title">{{ tags_num }}</p></a>
+                        </div>
+                    </div>
+                </nav>
+                {% include 'connectblock.html' %}
+            </div>
+        </div>
+        {% include 'linksblock.html' %}
+         <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3>
+                    <ul class="menu-list">
+                        {% for tmp_col,tmp_art in cate_articles.items %}
+                        <li><a class="level is-mobile" href="/categories/{{ tmp_art.2 }}"><span
+                                class="level-start"><span class="level-item">{{ tmp_col }}</span></span><span
+                                class="level-end"><span class="level-item tag">{{ tmp_art.1 }}</span></span></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {# 在移动端使用的样式#}
+        {% include 'unkownblock.html' %}
+    </div>
+{% endblock left_column %}
+
+{% block mid_column %}
+    <div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen">
+        <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3><hr>
+
+                    <ul class="menu-list">
+                        <li>
+                            {% for tmp_cate, Q in cate_articles.items %}
+                            <a class="level is-mobile" href="/categories/{{ Q.2 }}">
+                                <span class="level-start">
+                                    <span class="level-item">{{ tmp_cate }}</span>
+                                </span>
+                                <span class="level-end">
+                                    <span class="level-item tag">{{ Q.1 }}</span>
+                                </span>
+                            </a>
+                            {% endfor %}
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock mid_column %}
+
+{% block right-column %}
+    <div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3">
+        <div class="card widget" data-type="recent-posts"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content"><h3 class="menu-label">Recents</h3>
+                {% for article in recent_articles %}
+                    <article class="media">
+                        {% if article.avatar_svg %}
+                            <figure class="media-left">
+                                <a class="image" href="{% url 'articlesapp:show_article' article.id %}">
+                                    <img src="{{ article.avatar_svg.url }}"
+                                         alt="{{ article.title }}"></a>
+                            </figure>
+                        {% endif %}
+                        <div class="media-content">
+                            <p class="date">
+                                <time datetime="2021-12-21T00:00:00.000Z">{{ article.created }}</time>
+                            </p>
+                            <p class="title"><a
+                                    href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a></p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+         <div class="card widget" data-type="archives"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Archives</h3>
+                    <ul class="menu-list">
+                        {% for month_year,art in info_by_month_years.items %}
+                            <li>
+                                <a class="level is-mobile" href="/archives/{{ art.2 }}/{{ art.1 }}">
+                                    <span class="level-start">
+                                        <span class="level-item">{{ art.0 }} {{ art.2 }}</span>
+                                    </span>
+                                    <span class="level-end">
+                                        <span class="level-item tag">{{ art.3 }}</span>
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card widget" data-type="tags"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Tags</h3>
+                    <div class="field is-grouped is-grouped-multiline">
+                        {% for tag_name,tag_articles in tags_articles.items %}
+                            <div class="control">
+                                <a class="tags has-addons" href="/tags/{{ tag_name }}">
+                                    <span class="tag">{{ tag_name }}</span>
+                                    <span class="tag">{{ tag_articles.0 }}</span>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock right-column %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+
+{% block search %}
+    <div class="searchbox">
+        <div class="searchbox-container">
+            <div class="searchbox-header">
+                <div class="searchbox-input-container">
+                    <form method="get" >
+                        <input class="searchbox-input" name="search" type="text" placeholder="Type something..." >
+                    </form>
+                </div>
+                <a class="searchbox-close" href="javascript:;">×</a></div>
+                <div class="searchbox-body">
+                    <section class="searchbox-result-section">
+                        <header>Posts</header>
+                        {% for article in article_list|slice:":5" %}
+                        <a class="searchbox-result-item"
+                           href="{% url 'articlesapp:show_article' article.id%}">
+                            <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title"> {{ article.title }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-preview">{{ article.body|slice:'100' }}</span>
+                            </span>
+                        </a>
+
+                        {% endfor %}
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Pages</header>
+                        <a class="searchbox-result-item" href="{% url 'homeapp:home' %}">
+                            <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">(Untitled)</span>
+                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for Blog. Preview | Documentation | D</span>
+                            </span>
+                        </a>
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Categories</header>
+                         {% for cate_key, article_info in  cate_articles.items %}
+                            <a class="searchbox-result-item" href="/categories/{{ article_info.2 }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                                    <span class="searchbox-result-content">
+                                        <span class="searchbox-result-title">{{ cate_key }}</span>
+                                    </span>
+                            </a>
+                         {% endfor %}
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Tags</header>
+                        {% for tag_name,article_info in tags_articles.items %}
+                            <a class="searchbox-result-item" href="/tags/{{ tag_name }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                                <span class="searchbox-result-content">
+                                    <span class="searchbox-result-title">{{ tag_name }}
+                                    </span>
+                                </span>
+                            </a>
+                        {% endfor %}
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock search %}

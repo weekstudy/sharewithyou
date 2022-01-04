@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block left_column %}
+    <div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1">
+        <div class="card widget" data-type="profile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <a href="{% url 'userprofile:login' %}">
+                                <figure class="image is-128x128 mx-auto mb-2">
+                                    <img class="avatar" src="{% static 'images/logo.JPG' %}"
+                                         alt="PPOffice"></figure>
+                            </a>
+                            <p class="title is-size-4 is-block" style="line-height:inherit;">Week · Study</p>
+                            <p class="is-size-6 is-block">Developer</p>
+                            <p class="is-size-6 is-flex justify-content-center"><i
+                                    class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div>
+                    </div>
+                </nav>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}">
+                            <p class="title"> {{ num }}</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="level-item has-text-centered is-marginless">
+                    <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}">
+                        <p class="title">{{ cate_num }}</p></a>
+                    </div>
+                </div>
+                    <div class="level-item has-text-centered is-marginless">
+                    <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}">
+                        <p class="title">{{ tags_num }}</p></a>
+                    </div>
+                </div>
+                </nav>
+                {% include 'connectblock.html' %}
+            </div>
+        </div>
+        {% include 'linksblock.html' %}
+
+         <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3>
+                    <ul class="menu-list">
+                        {% for tmp_col,tmp_art in cate_articles.items %}
+                        <li>
+                            <a class="level is-mobile" href="/categories/{{ tmp_art.2 }}">
+                                <span class="level-start">
+                                    <span class="level-item">{{ tmp_col }}</span>
+                                </span>
+                                <span class="level-end">
+                                    <span class="level-item tag">{{ tmp_art.1 }}</span>
+                                </span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {# 在移动端使用的样式#}
+        {% include 'unkownblock.html' %}
+    </div>
+{% endblock left_column %}
+
+
+{% block mid_column %}
+
+    <div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen">
+        <form method="post" action="." enctype="multipart/form-data">
+            <!-- Django中需要POST数据的地方都必须有csrf_token -->
+            <!-- 记得增加 enctype ！ -->
+            {% csrf_token %}
+            <!-- 文章标题图 -->
+{#            <link rel="stylesheet" type="text/css" href="{% static 'css-theme/white/bootstrap.min.css' %}">#}
+            <link rel="stylesheet" type="text/css" href="{% static 'modify_css.css' %}">
+            <div class="form-group">
+
+                <div><label style="margin-top: 5px" for="avatar_svg">封面图</label></div>
+                <input type="file" class="form-control-file" name="avatar_svg" id="avatar_svg">
+            </div>
+
+            <!-- 文章标题 -->
+            <div class="form-group">
+                <!-- 标签 -->
+                <label for="title">文章标题</label>
+                <!-- 文本框 -->
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <!-- 文章栏目 -->
+            <div class="form-group">
+                <label for="column">类别</label>
+                <select class="form-control" id="column" name="column">
+                    <option value="none">Choose Category...</option>
+                    {% for column in columns %}
+                        <option value="{{ column.id }}">{{ column }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- 文章标签 -->
+            <div class="form-group">
+                <label for="tags">Label</label>
+                <input type="text" class="form-control col-3" id="tags" name="tags">
+            </div>
+            <!-- 文章正文 -->
+            <div class="form-group">
+                <label for="body">文章正文</label>
+                <!-- 文本区域 -->
+                <textarea type="text" class="form-control" id="body" name="body" rows="12"></textarea>
+            </div>
+            <!-- 提交按钮 -->
+            <button type="submit" class="btn btn-primary">完成</button>
+        </form>
+    </div>
+
+{% endblock mid_column %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+
+{% block search %}
+    <div class="searchbox">
+        <div class="searchbox-container">
+            <div class="searchbox-header">
+                <div class="searchbox-input-container">
+                    <form method="get" >
+                        <input class="searchbox-input" name="search" type="text" placeholder="Type something..." >
+                    </form>
+                </div>
+                <a class="searchbox-close" href="javascript:;">×</a></div>
+                <div class="searchbox-body">
+                    <section class="searchbox-result-section">
+                        <header>Posts</header>
+                        {% for article in article_list|slice:":5" %}
+                        <a class="searchbox-result-item"
+                           href="{% url 'articlesapp:show_article' article.id%}">
+                            <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title"> {{ article.title }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-preview">{{ article.body|slice:'100' }}</span>
+                            </span>
+                        </a>
+                        {% endfor %}
+
+
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Pages</header>
+                        <a class="searchbox-result-item" href="{% url 'homeapp:home' %}">
+                            <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">(Untitled)</span>
+                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for Blog. Preview | Documentation | D</span>
+                            </span>
+                        </a>
+                    </section>
+
+                    <section class="searchbox-result-section">
+                        <header>Categories</header>
+                         {% for cate_key, article_info in  cate_articles.items %}
+                            <a class="searchbox-result-item" href="/categories/{{ article_info.2 }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                                    <span class="searchbox-result-content">
+                                        <span class="searchbox-result-title">{{ cate_key }}</span>
+                                    </span>
+                            </a>
+                         {% endfor %}
+                    </section>
+
+                    <section class="searchbox-result-section">
+                        <header>Tags</header>
+                        {% for tag_name,article_info in tags_articles.items %}
+                            <a class="searchbox-result-item" href="/tags/{{ tag_name }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                                <span class="searchbox-result-content">
+                                    <span class="searchbox-result-title">{{ tag_name }}
+                                    </span>
+                                </span>
+                            </a>
+                        {% endfor %}
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock search %}

@@ -1,0 +1,72 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in
+    </title>
+    <link REL="SHORTCUT ICON" HREF="{% static 'images/logos.png' %}"/>
+    <link rel="stylesheet" href="{% static 'http_use/http_use.fontawesome.com_releases_v5.15.2_css_all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/icarus/style/default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}">
+    <link rel="stylesheet" href="{% static 'md_css/colorful.css' %}">
+    <link rel="stylesheet" href="{% static 'http_use/http_use.fontawesome.com_releases_v5.15.2_css_all.css' %}">
+    <link rel="stylesheet" href="{% static 'http_use/http_cdn.jsdelivr.net_npm_highlight.js_9.12.0_styles_atom-one-light.css' %}">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro">
+    <script type="text/javascript" async=""
+            src="{% static 'http_cdn_js/http_www.google-analytics.com_analytics.js' %}"></script>
+    <style>body > .footer, body > .navbar, body > .section {
+        opacity: 0
+    }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-main" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform: translateY(0px);">
+        <link rel="stylesheet" type="text/css" href="{% static 'css-theme/icarus/style/default.css' %}">
+         <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}">
+        <div class="container">
+            <div class="navbar-brand justify-content-center" style="float: left">
+                <a class="navbar-item navbar-logo" href=""><img src="/static/images/logo.JPG" alt="Icarus" height="28"></a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item " href="{% url 'homeapp:home' %}"> Home</a>
+                    <a class="navbar-item" href="{% url 'homeapp:categories' %}">Categories</a>
+                     <a class="navbar-item" href="{% url 'homeapp:archives' %}">Archives</a>
+                    <a class="navbar-item" href="{% url 'homeapp:tags' %}">Tag</a>
+                    <a class="navbar-item" href="{% url 'homeapp:about' %}">About</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+     <div class="box">
+         <link rel="stylesheet" href="{% static 'css-theme/icarus/style/login.css'%}">
+        <a href="{% url 'homeapp:home' %}">
+            <figure class="image is-128x128 mx-auto mb-2">
+            <img class="avatar" src="{% static 'images/logos.png' %}"
+                 alt="PPOffice" > </figure>
+        </a>
+        <h2>Login</h2>
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="inputbox">
+                <input type="text" name="username" placeholder="仅支持自己登录" style="background:transparent">
+                <label>Username</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" placeholder="电脑开机密码" style="background:transparent">
+                <label>Password</label>
+            </div>
+            <input type="submit" name="" value="Sign in">
+        </form>
+    </div>
+</body>
+</html>

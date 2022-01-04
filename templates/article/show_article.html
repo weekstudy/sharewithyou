@@ -1,0 +1,513 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block left_column %}
+    <div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1">
+        <div class="card widget" data-type="profile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <a href="{% url 'userprofile:login' %}">
+                                <figure class="image is-128x128 mx-auto mb-2">
+                                    <img class="avatar" src="{% static 'images/logo.JPG' %}"
+                                         alt="PPOffice"></figure>
+                            </a>
+                            <p class="title is-size-4 is-block" style="line-height:inherit;">Week · Study</p>
+                            <p class="is-size-6 is-block">Developer</p>
+                            <p class="is-size-6 is-flex justify-content-center"><i
+                                    class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div>
+                    </div>
+                </nav>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}"><p class="title">
+                            {{ num }}</p>
+                        </a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}">
+                            <p class="title">{{ cate_num }}</p></a></div>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
+                        <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}">
+                            <p class="title">{{ tags_num }}</p></a>
+                        </div>
+                    </div>
+                </nav>
+                {% include 'connectblock.html' %}
+            </div>
+        </div>
+        {% include 'linksblock.html' %}
+        <div class="card widget" data-type="categories"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Categories</h3>
+                    <ul class="menu-list">
+                        {% for tmp_col,tmp_art in cate_articles.items %}
+                            <li><a class="level is-mobile" href="/categories/{{ tmp_art.2 }}"><span
+                                    class="level-start"><span class="level-item">{{ tmp_col }}</span></span><span
+                                    class="level-end"><span class="level-item tag">{{ tmp_art.1 }}</span></span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card widget" data-type="tags"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+            <div class="card-content">
+                <div class="menu"><h3 class="menu-label">Tags</h3>
+                    <div class="field is-grouped is-grouped-multiline">
+                        {% for tag_name,tag_articles in tags_articles.items %}
+                            <div class="control">
+                                <a class="tags has-addons" href="/tags/{{ tag_name }}">
+                                    <span class="tag">{{ tag_name }}</span>
+                                    <span class="tag">{{ tag_articles.0 }}</span>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# 在移动端使用的样式#}
+        {% include 'unkownblock.html' %}
+
+    </div>
+{% endblock left_column %}
+
+{% block mid_column %}
+
+    <div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen">
+        <div class="card"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+        {% if article.avatar_svg %}
+            <div class="card-image"><span class="image is-7by3">
+                <img class="fill" src="{{ article.avatar_svg.url }}"
+                     alt="{{ article.title }}"></span>
+            </div>
+        {% endif %}
+            <article class="card-content article" role="article">
+
+                <h1 class="title is-3 is-size-4-mobile">{{ article.title }}</h1>
+                <div class="article-meta is-size-7 is-uppercase level is-mobile">
+                    <div class="level-left">
+                        <span class="level-item fas fa-user">&nbsp;{{ article.author }}</span>
+                        <span class="level-item fas fa-tags">&nbsp;
+                            {% for tag in article.tags.all %}
+                                <a href="{% url 'articlesapp:articles' %}"
+                                   class="badge badge-secondary">{{ tag }}, </a>
+                            {% endfor %}
+                        </span>
+
+                        <span class="level-item fas fa-clock">&nbsp;{{ article.created|date:"Y-m-d" }}
+                        </span>
+                        <span class="level-item fas fa-eye">&nbsp;{{ article.total_views }}</span>
+                        {% if user.is_authenticated and article.author == user %}
+                            <span class="level-item"><a
+                                    href="{% url "articlesapp:article_update" article.id %}">edit</a></span>
+                            <script src="{% static 'js/jquery_3.1.1.js' %}"></script>
+                            <script src="{% static 'layer/layer.js' %}"></script>
+                            <span class="level-item"><a href="#" onclick="confirm_delete()">delete</a></span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="content"><p>{{ article.body|safe }}</p>
+                    <article class="message message-immersive is-warning">
+                        <div class="message-body">
+                            <i class="fas fa-question-circle mr-2"></i>Something wrong with this article?
+                            Click <a target="_blank" rel="noopener"
+                                     href="https://github.com/ppoffice/hexo-theme-icarus/edit/site/source/_posts/en/Getting-Started.md">here</a>
+                            to submit your suggestions.Thanks!
+                        </div>
+                    </article>
+
+                     <article class="message message-immersive is-warning">
+                        {# 留言 #}
+{#                         <script src="{% static 'ckeditor/prism/prism_default.js' %}"></script>#}
+{#                         <link rel="stylesheet" href="{% static 'ckeditor/prism/prism_default.css' %}">#}
+                        <form method="POST" action="{% url 'comment:post_comment' article.id %}" >
+                            {% csrf_token %}
+                            <div class="form-group" style="color: grey;padding-top: 1%;padding-left: 1%;padding-right: 1% ">
+                                <label for="body">
+                                    <strong style="color: grey;" > Suggestions： </strong>
+                                </label><br>
+{#                                <div>#}
+{#                                    {{ comment_form.media }}#}
+{#                                    {{ comment_form.body }}#}
+{#                                </div>#}
+                                <textarea type="text" class="form-control" id="body"
+                                          name="body" style="width: 100%; caret-color: red;" rows="10" placeholder="留下你的jio迹👣，证明你来过吧😁……"></textarea>
+{#                                <script>#}
+{#                                    document.getElementById("body").value="留言……😁!"#}
+{#                                </script>#}
+                            </div>
+                            <br>
+                            <!-- 提交按钮 -->
+                            &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" style="background-color:grey ;color: white">发送</button>
+                        </form>
+                    </article>
+
+                    <!-- 显示评论 -->
+                    {% if comments.count != 0 %}
+                        <h4>共有{{ comments.count }}条评论</h4>
+                        <article class="message message-immersive is-warning">
+                            <hr>
+                                {% for comment in comments %}
+
+                                    <p style="padding-left: 2% ;"> <strong style="color: pink">{{ comment.critic }} </strong>
+                                    于
+                                    <span style="color: green">
+                                        {{ comment.created|date:"Y-m-d H:i:s" }}
+                                    </span> 时说：{{ comment.body|safe }}
+                                    </p>
+                                    <hr>
+                                {% endfor %}
+
+                        </article>
+                    {% endif %}
+                    <p>
+                        <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-size:12px;line-height:1.2;display:inline-block;border-radius:3px"
+                           href="https://www.vecteezy.com/free-vector/vector-landscape" target="_blank"
+                           rel="noopener noreferrer" title="Vector Landscape Vectors by Vecteezy"><span
+                                style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                  style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white"
+                                                                                  viewBox="0 0 32 32"><path
+                                d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span
+                                style="display:inline-block;padding:2px 3px">Vector Landscape Vectors by Vecteezy</span></a>
+                    </p>
+                    <script>
+                        document.querySelectorAll('.not-gallery-item')
+                            .forEach(el => {
+                                if (!el.dataset.src) {
+                                    return;
+                                }
+                                const img = document.createElement('img');
+                                img.style = 'display:none !important;';
+                                img.src = el.dataset.src;
+                                img.addEventListener('error', () => {
+                                    img.remove();
+                                    el.style.color = 'inherit';
+                                    el.style.backgroundImage = 'none';
+                                    el.style.background = 'none';
+                                });
+                                img.addEventListener('load', () => {
+                                    img.remove();
+                                });
+                                document.body.appendChild(img);
+                            });
+                    </script>
+                </div>
+
+
+                <div class="article-licensing box">
+                    <div class="licensing-title"><p>Getting Started with Icarus</p>
+                        <p>
+                            <a href="http://ppoffice.github.io/hexo-theme-icarus/uncategorized/getting-started-with-icarus/">http://ppoffice.github.io/hexo-theme-icarus/uncategorized/getting-started-with-icarus/</a>
+                        </p></div>
+                    <div class="licensing-meta level is-mobile">
+                        <div class="level-left">
+                            <div class="level-item is-narrow">
+                                <div><h6>Author</h6>
+                                    <p>PPOffice</p></div>
+                            </div>
+                            <div class="level-item is-narrow">
+                                <div><h6>Posted on</h6>
+                                    <p>2020-04-01</p></div>
+                            </div>
+                            <div class="level-item is-narrow">
+                                <div><h6>Licensed under</h6>
+                                    <p><a class="icons" rel="noopener" target="_blank" title="Creative Commons"
+                                          href="https://creativecommons.org/"><i
+                                            class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener"
+                                                                                            target="_blank"
+                                                                                            title="CC BY-NC-SA 4.0"
+                                                                                            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC
+                                        BY-NC-SA 4.0</a></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span>
+                    <a class="link-muted mr-2" rel="tag" href="{% url 'homeapp:home' %}"> HOME </a>
+                    <a class="link-muted mr-2" rel="tag" href={% url 'homeapp:home' %}>Getting Started</a></div>
+                <div class="sharethis-inline-share-buttons st-center  st-inline-share-buttons st-animated" id="st-1">
+                    <div class="st-total ">
+                        <span class="st-label">4.5k</span>
+                        <span class="st-shares">
+    Shares
+  </span>
+                    </div>
+                    <div class="st-btn st-first" data-network="facebook" style="display: inline-block;">
+                        <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="twitter" style="display: inline-block;">
+                        <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="pinterest" style="display: inline-block;">
+                        <img alt="pinterest sharing button" src="https://platform-cdn.sharethis.com/img/pinterest.svg">
+
+                    </div>
+                    <div class="st-btn" data-network="email" style="display: inline-block;">
+                        <img alt="email sharing button" src="https://platform-cdn.sharethis.com/img/email.svg">
+
+                    </div>
+                    <div class="st-btn st-last" data-network="sharethis" style="display: inline-block;">
+                        <img alt="sharethis sharing button" src="https://platform-cdn.sharethis.com/img/sharethis.svg">
+
+                    </div>
+                </div>
+                <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ab6f60ace89f00013641890&amp;product=inline-share-buttons"
+                        defer=""></script>
+            </article>
+        </div><!--!-->
+
+        <nav class="post-navigation mt-4 level is-mobile"
+             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+
+            {% if previous_article != None %}
+                <div class="level-start">
+                    <a class="article-nav-prev level level-item link-muted"
+                       href="{% url 'articlesapp:show_article' previous_article.id %}">
+                        <i class="level-item fas fa-chevron-left"></i>
+                        <span class="level-item">{{ previous_article.title }}</span>
+                    </a>
+                </div>
+            {% endif %}
+
+            {% if next_article != None %}
+                <div class="level-end">
+                    <a class="article-nav-next level level-item link-muted"
+                       href="{% url 'articlesapp:show_article' next_article.id %}">
+                        <span class="level-item">{{ next_article.title }}</span>
+                        <i class="level-item fas fa-chevron-right"></i></a>
+                </div>
+            {% endif %}
+
+
+        </nav><!--!--></div>
+
+    <script>
+        // 删除文章的函数
+        function confirm_delete() {
+            // 调用layer弹窗组件
+            layer.open({
+                // 弹窗标题
+                title: "确认删除",
+                // 正文
+                content: "确认删除这篇文章吗？",
+                // 点击确定按钮后调用的回调函数
+                yes: function (index, layero) {
+                    // 指定应当前往的 url
+                    location.href = '{% url "articlesapp:article_delete" article.id %}'
+                },
+            })
+        }
+    </script>
+{% endblock mid_column %}
+
+
+
+{% block footer %}
+
+    <footer class="footer" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1;">
+        <div class="container">
+            <div class="level">
+                <div class="level-start">
+                    <a class="footer-logo is-block mb-2" href="/">
+                        <img src="{% static "images/logo.svg" %}" alt="Icarus" height="28">
+                    </a>
+                    <p class="is-size-7">
+                        <span>© 2021 PPOffice</span>
+                        &nbsp;&nbsp;Powered by
+                        <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+                        &nbsp;&amp;&nbsp;<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank"
+                                            rel="noopener">Icarus</a>
+                    </p>
+                </div>
+                <div class="level-end">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button is-transparent is-large" target="_blank" rel="noopener"
+                               title="Creative Commons" href="https://creativecommons.org/">
+                                <i class="fab fa-creative-commons"></i>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-transparent is-large" target="_blank" rel="noopener"
+                               title="Discuss on GitHub"
+                               href="https://github.com/ppoffice/hexo-theme-icarus/discussions">
+                                <i class="fas fa-comments"></i>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-transparent is-large" target="_blank" rel="noopener"
+                               title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock footer %}
+
+{% block search %}
+    <div class="searchbox">
+        <div class="searchbox-container">
+            <div class="searchbox-header">
+                <div class="searchbox-input-container">
+                    <form method="get">
+                        <input class="searchbox-input" name="search" type="text" placeholder="Type something...">
+                    </form>
+                </div>
+                <a class="searchbox-close" href="javascript:;">×</a></div>
+            <div class="searchbox-body">
+                <section class="searchbox-result-section">
+                    <header>Posts</header>
+                    {% for item in article_list %}
+                        <a class="searchbox-result-item"
+                           href="{% url 'articlesapp:show_article' item.id %}">
+                            <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
+                            <span class="searchbox-result-content">
+                                <span class="searchbox-result-title"> {{ item.title }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-title"> </span>
+                                <span class="searchbox-result-preview">{{ item.body|slice:'100' }}</span>
+                            </span>
+                        </a>
+
+                    {% endfor %}
+                </section>
+                <section class="searchbox-result-section">
+                    <header>Pages</header>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/about/index.html">
+                        <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">(Untitled)</span>
+                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for the static site generator Hexo. Preview | Documentation | D</span>
+                            </span>
+                    </a>
+                </section>
+                <section class="searchbox-result-section">
+                    <header>Categories</header>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Configuration/">
+                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Configuration
+                                    <span class="searchbox-result-title-secondary">(Configuration)</span>
+                                </span>
+
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/">
+                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Plugins
+                                <span class="searchbox-result-title-secondary">(Plugins)</span>
+                            </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Search/">
+                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Search
+                                    <span class="searchbox-result-title-secondary">(Plugins/Search)</span>
+                                </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Donation/">
+                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Donation
+                                    <span class="searchbox-result-title-secondary">(Plugins/Donation)</span>
+                                </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Share/">
+                            <span class="searchbox-result-icon">
+                                <i class="fa fa-folder"></i>
+                            </span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Share
+                                    <span class="searchbox-result-title-secondary">(Plugins/Share)</span>
+                                </span>
+                            </span>
+                    </a>
+                </section>
+                <section class="searchbox-result-section">
+                    <header>Tags</header>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Demo/">
+                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">Demo
+                                    <span class="searchbox-result-title-secondary">(Demo)</span>
+                                </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Icarus-User-Guide/">
+                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">
+                                    Icarus User Guide
+                                    <span class="searchbox-result-title-secondary">(Icarus-User-Guide)</span>
+                                </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Getting-Started/">
+                        <span class="searchbox-result-icon"> <i class="fa fa-tag"></i></span>
+                        <span class="searchbox-result-content">
+                                 <span class="searchbox-result-title">
+                                    Getting Started
+                                     <span class="searchbox-result-title-secondary">(Getting-Started)</span>
+                                </span>
+                            </span>
+                    </a>
+                    <a class="searchbox-result-item"
+                       href="/hexo-theme-icarus/tags/Icarus%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97/">
+                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                        <span class="searchbox-result-content">
+                                <span class="searchbox-result-title">
+                                    Icarus用户指南
+                                    <span class="searchbox-result-title-secondary">(Icarus用户指南)</span>
+                                </span>
+                            </span>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock search %}
+
+<script src="{% static 'js/jquery.sticky-sidebar.min.js' %}"></script>
+
+<script>
+    $(() => {
+        $('#sidebar').stickySidebar({
+            topSpacing: 0,
+            bottomSpacing: 20,
+        });
+        $('#sidebar2').stickySidebar({
+            topSpacing: 0,
+            bottomSpacing: 20,
+        });
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1000) {
+                $('#notice_card,.aliyun_invite').fadeOut(2000);
+            } else {
+                $('#notice_card,.aliyun_invite').stop().fadeIn(1000);
+            }
+        }).scroll();
+    });
+</script>

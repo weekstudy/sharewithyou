@@ -1,0 +1,35 @@
+.tag {
+    width: 125px;
+    height: 40px;
+    position: relative;
+    background-color: #09F;
+    border-radius:10px;
+}
+
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 0px;
+    bottom: -40px;
+}
+
+.arrow * {
+    display: block;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    font-size: 0;
+    line-height: 0;
+}
+
+.arrow em {
+    border-color: transparent #09F #09F transparent;
+    border-width: 20px 30px;
+}
+
+.arrow span {
+    border-width: 15px 25px;
+    border-color: transparent #FFF #FFF transparent;
+    bottom: 0;
+}

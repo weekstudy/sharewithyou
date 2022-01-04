@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="card widget" data-type="profile"
+     style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered flex-shrink-1">
+                <div>
+                    <a href="{% url 'userprofile:login' %}">
+                        <figure class="image is-128x128 mx-auto mb-2">
+                            <img class="avatar" src="{% static 'images/logo.JPG' %}"
+                                 alt="PPOffice"></figure>
+                    </a>
+                    <p class="title is-size-4 is-block" style="line-height:inherit;">Janue · ZHOU</p>
+                    <p class="is-size-6 is-block">Developer</p>
+                    <p class="is-size-6 is-flex justify-content-center"><i
+                            class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div><p class="heading">Posts</p><a href="{% url 'homeapp:archives' %}"><p class="title">39TODO</p>
+                </a></div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div><p class="heading">Categories</p><a href="{% url 'homeapp:categories' %}"><p class="title">
+                    9</p></a></div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div><p class="heading">Tags</p><a href="{% url 'homeapp:tags' %}"><p class="title">4</p></a>
+                </div>
+            </div>
+        </nav>
+        {% include 'connectblock.html' %}
+    </div>
+</div>

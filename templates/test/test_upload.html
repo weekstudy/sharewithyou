@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UPLOAD</title>
+</head>
+<body>
+
+{#    <form id="upload" action="{% url 'save' %}" method="POST" enctype="multipart/form-data">#}
+    <form id="upload" action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        名称：<input type="text" name="title" value=""/><br/><br/>
+        上传文件：<input type="file" name="pic" value=""/><br/><br/>
+        <input type="submit" value="上传"/>
+
+    </form>
+    {% if success %}
+        <script>
+            alert('上传成功!');
+        </script>
+    {% endif %}
+
+</body>
+</html>

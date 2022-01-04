@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .dialog_outter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dialog_wrapper {
+            width: 400px;
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .dialog_close_btn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .dialog_title {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .dialog_content {
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .dialog_btn_group {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn_confirm {
+            background-color: Blue;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid blue;
+            border-radius: 4px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .btn_cancel {
+            background-color: #fff;
+            padding: 5px 10px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .form_item span {
+            display: inline-block;
+            width: 100px;
+        }
+
+        .form_item input {
+            width: 200px;
+            height: 25px;
+            line-height: 25px;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .form_item {
+            margin-bottom: 10px;
+        }
+
+        .form_item:last-child {
+            margin-bottom: 0;
+        }
+
+        .overlap {
+            background: #000;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+{#<div class="overlap"></div>#}
+<div onclick="handleClick()">点击显示弹窗</div>
+{#<div class="dialog_outter"></div>#}
+<script>
+    let dialog_outter = document.querySelector(".dialog_outter")
+    let overlap = document.querySelector(".overlap")
+    const dialog_html_str = '<div class="dialog_wrapper">' +
+        '<div class="dialog_close_btn" onclick="closeDialog()">X</div>' +
+        '<div class="dialog_title">标题</div>' +
+        '<div class="dialog_content">' +
+        '<div class="form_item">' +
+        '<span>姓名：</span>' +
+        '<input type="text" name="name" placeholder="请输入姓名...">' +
+        '</div>' +
+        '<div class="form_item">' +
+        '<span>家庭住址：</span>' +
+        '<input type="text" name="name">' +
+        '</div>' +
+        '<div class="form_item">' +
+        '<span>联系电话：</span>' +
+        '<input type="text" name="name">' +
+        '</div>' +
+        '</div>' +
+        '<div class="dialog_btn_group">' +
+        '<div class="btn_confirm">确定</div>' +
+        '<div class="btn_cancel" onclick="closeDialog()">取消</div>' +
+        '</div>' +
+        '</div>'
+
+    function handleClick() {
+        overlap.style.display = "block";
+        let fg = document.createRange().createContextualFragment(dialog_html_str)
+        dialog_outter.appendChild(fg)
+    }
+
+    function closeDialog() {
+        overlap.style.display = "none";
+        let dialog = document.querySelector(".dialog_wrapper");
+        dialog.remove(1);
+    }
+</script>
+</body>
+</html>
