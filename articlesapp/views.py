@@ -26,6 +26,8 @@ from comment.forms import CommentForm
 
 from utils.utils import *
 
+
+
 EMOJI_LIST = [':speak-no-evil_monkey:', ':monkey_face:', ':monkey:', ':dog_face:', ':dog:', ':poodle:', ':wolf:',
               ':cat_face:', ':grinning_cat:', ':grinning_cat_with_smiling_eyes:', ':pouting_cat:', ':cat:',
               ':tiger_face:', ':tiger:', ':leopard:', ':horse_face:', ':horse:', ':cow_face:', ':ox:',
@@ -78,7 +80,6 @@ def article_list(request):
     column = request.GET.get('column')
     # TODO 这里应该把column转成数字
     tag = request.GET.get('tag')
-    print('========72========', search, order, column, tag)
 
     article_list = ArticlePost.objects.all()
     # 搜索查询集
@@ -157,14 +158,14 @@ def show_article(request, id):
 
     for comment in comments:
         comment.critic = emoji.emojize(comment.critic)
-        comment.body = markdown.markdown(comment.body,
-                                         extensions=[
-                                             # 包含 缩写、表格等常用扩展
-                                             'markdown.extensions.extra',
-                                             # 语法高亮扩展
-                                             'markdown.extensions.codehilite',
-                                             'markdown.extensions.toc',
-                                         ])
+        # comment.body = markdown.markdown(comment.body,
+        #                                  extensions=[
+        #                                      # 包含 缩写、表格等常用扩展
+        #                                      'markdown.extensions.extra',
+        #                                      # 语法高亮扩展
+        #                                      'markdown.extensions.codehilite',
+        #                                      'markdown.extensions.toc',
+        #                                  ])
 
     # 浏览量 +1
     article.total_views += 1
@@ -305,6 +306,8 @@ def article_update(request, id):
     """
     cate_articles = get_cate_articles()
     total = len(ArticlePost.objects.all())
+    tmp_context = get_context(request)
+
     # 获取需要修改的具体文章对象
     article = ArticlePost.objects.get(id=id)
     # 过滤非作者的用户

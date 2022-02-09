@@ -38,9 +38,9 @@ EMOJI_LIST = [':speak-no-evil_monkey:', ':monkey_face:', ':monkey:', ':dog_face:
 # Create your views here.
 # 文章评论
 # @login_required(login_url='/userprofile/login/')
-def post_comment(request, article_id):
+def post_comment(request, article_id, parent_comment_id=None):
     # Model.objects.get()的功能基本是相同的
-    article = get_object_or_404(ArticlePost, id=article_id)
+    article = get_object_or_404(ArticlePost, id=article_id,)
     # 在show_article.html中设置了form表单，
     # 一旦提交就会触发action设置的url,comment:post_comment
 
@@ -56,7 +56,8 @@ def post_comment(request, article_id):
             new_comment.article = article
             # new_comment.user = request.user
             # 将用户随机的指定emoji
-            new_comment. critic = EMOJI_LIST[random.randint(0, len(EMOJI_LIST))]
+            new_comment.critic = EMOJI_LIST[random.randint(0, len(EMOJI_LIST))]
+
             new_comment.save()
             # redirect()：返回到一个适当的url中：即用户发送评论后，重新定向到文章详情页面。
             # 当其参数是一个Model对象时，会自动调用这个Model对象的get_absolute_url()方法
@@ -64,9 +65,18 @@ def post_comment(request, article_id):
             return redirect(article)
         else:
             return HttpResponse("表单内容有误，请重新填写。")
+    elif request.method == 'GET':
+        comment_form = CommentForm()
+        context = {
+            'comment_form': comment_form,
+            'article_id': article_id,
+            'parent_comment_id': parent_comment_id
+        }
+        return render(request, 'comment/reply.html', context)
+
     # 处理错误请求
     else:
-        return HttpResponse("发表评论仅接受POST请求。")
+        return HttpResponse("发表评论仅接受POST/GET请求。")
 
 
 

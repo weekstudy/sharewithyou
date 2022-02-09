@@ -1,18 +1,21 @@
 {% load static %}
 
-<link REL="SHORTCUT ICON" HREF="{% static 'images/logo.JPG' %}"/>
+
 
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>share</title>
+    <link rel="SHORTCUT ICON" href="{% static 'images/logo.JPG' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css-theme/icarus/style/default.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}">
     <link rel="stylesheet" href="{% static 'md_css/colorful.css' %}">
-    <link rel="stylesheet" href="{% static 'http_use/http_use.fontawesome.com_releases_v5.15.2_css_all.css' %}">
-    <link rel="stylesheet"
-          href="{% static 'http_use/http_cdn.jsdelivr.net_npm_highlight.js_9.12.0_styles_atom-one-light.css' %}">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro">
+{#    <link rel="stylesheet" href="{% static 'http_use/http_use.fontawesome.com_releases_v5.15.2_css_all.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'http_use/http_cdn.jsdelivr.net_npm_highlight.js_9.12.0_styles_atom-one-light.css' %}">#}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro">
     <script type="text/javascript" async=""
             src="{% static 'http_cdn_js/http_www.google-analytics.com_analytics.js' %}"></script>
     <style>body > .footer, body > .navbar, body > .section {
@@ -46,7 +49,7 @@
 
     <div class="container">
         <div class="navbar-brand justify-content-center" style="float: left">
-            <a class="navbar-item navbar-logo" href="">
+            <a class="navbar-item navbar-logo" href="{% url 'homeapp:home' %}">
                 <img src="/static/images/logo.JPG" alt="Icarus" height="28"></a>
         </div>
         <div class="navbar-menu">
@@ -96,7 +99,7 @@
         </div>
     </div>
 </nav>
-{#{% include 'header.html' %}#}
+
 <section>
     {#个人简介#}
     <div class="container">
@@ -215,8 +218,9 @@
 <script src="{% static 'js/js/insight.js' %}" defer></script>
 
 <script>
+    // 这是content.json文件里面其实是所有文章
     document.addEventListener('DOMContentLoaded', function () {
-    loadInsight({"contentUrl": "/hexo-theme-icarus/content.json"}, {
+    loadInsight({"contentUrl": ""}, {
         "hint": "Type something...",
         "untitled": "(Untitled)",
         "posts": "Posts",
@@ -226,6 +230,7 @@
     });
 });
 </script>
+
 
 
 </body>

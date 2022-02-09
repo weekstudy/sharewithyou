@@ -1,7 +1,7 @@
 #! python3.8
 # -*-coding:utf-8 -*-
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render ,redirect
 from django.http import HttpResponse, StreamingHttpResponse,FileResponse
 from .models import Resources
 from sharewithyou.settings import MEDIA_URL
@@ -78,16 +78,6 @@ def pre_pdf(request):
   test = Resources.objects.filter(url='media/resources/1706-transformer.pdf')
 
   return response
-
-
-# def preview(request):
-#     file = open('./media/resources/数学之美第二版.pdf', 'rb')
-#     response = FileResponse(file)
-#     response['Content-Type'] = 'application/octet-stream'
-#     response['Content-Disposition'] = 'attachment;filename="数学之美第二版.pdf"'
-#
-#     context = {'response': response}
-#     return render(request,'downloads/download.html', context)
 
 
 def uploads(request):

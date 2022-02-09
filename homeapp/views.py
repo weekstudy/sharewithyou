@@ -5,7 +5,7 @@ from django.db.models import Q, Count
 from django.db.models.functions import TruncMonth, TruncWeek, TruncYear, TruncDay
 from django.db.models.functions import ExtractYear
 from django.urls import path, re_path
-
+import markdown
 
 from articlesapp.models import ArticlePost, Category, TaggableManager
 
@@ -304,7 +304,6 @@ def archives_by_month(request):
     all_articles = ArticlePost.objects.all()
     articles_by_year, articles_by_month_years = archives_order_by_year(all_articles)
     context['info_by_month_years'] = info_by_month_years
-    print('=======251======', articles_by_month_years)
     tmp_articles = articles_by_month_years.get(month_year, None)
     paginator = Paginator(tmp_articles, 10)
     # 获取 url 中的页码
@@ -335,7 +334,21 @@ def get_paginator(request, articles, page_per=5):
     :param page_per:
     :return:
     """
-    paginator = Paginator(articles, page_per)
+    new_articls=[]
+    for i in articles:
+        i.body = markdown.markdown(i.body,
+                                     extensions=[
+                                         # 包含 缩写、表格等常用扩展
+                                         'markdown.extensions.extra',
+                                         # 语法高亮扩展
+                                         'markdown.extensions.codehilite',
+                                         'markdown.extensions.toc',
+                                     ])
+        # i.body = md.convert(article.body)
+        new_articls.append(i)
+
+    paginator = Paginator(new_articls, page_per)
+
     # 获取 url 中的页码
     page = request.GET.get('page', 1)
     page_num = paginator.num_pages
@@ -361,6 +374,7 @@ def home(request):
     search = request.GET.get('search', None)
     cur_page_articles, _ = get_paginator(request, all_articles, 6)
     context['cur_page_articles'] = cur_page_articles
+
     if search:
         context = search_keyword(request)
     return render(request, "homeapp/index.html", context)
@@ -368,12 +382,13 @@ def home(request):
 
 def categories(request):
     context = get_context(request)
-    # print('=====583==', context)
+
     search, order, column, tag = get_params(request)
     if search:
         context = search_keyword(request)
         return render(request, "homeapp/index.html", context)
     else:
+        # print('=====583==', context)
         return render(request, "homeapp/categories.html", context)
 
 
@@ -467,3 +482,7 @@ def search_keyword(request):
 
 def download(request):
     return render(request, 'homeapp/download.html')
+
+
+def js(request):
+    return render(request, 'test/js.html')

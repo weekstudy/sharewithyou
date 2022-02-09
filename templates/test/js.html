@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<body>
+
+<h2>JavaScript 语句</h2>
+
+<p><b>JavaScript 程序</b> 是一系列由计算机执行的 <b>语句</b>。</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<button onclick="document.getElementById('demo2').innerHTML=Date()">现在的时间是？</button>
+<button onclick="this.innerHTML=Date()">现在的时间是？</button>
+<script>
+
+var x, y, z;  // 语句 1
+x = 22;        // 语句 2
+y = 11;        // 语句 3
+z = x + y;    // 语句 4
+
+document.getElementById("demo").innerHTML =
+"z 的值是" + z + "。";  
+
+</script>
+
+</body>
+</html>

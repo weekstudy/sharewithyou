@@ -26,6 +26,7 @@
     <orderEntry type="library" name="analytics" level="application" />
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="library" name="highlight.js" level="application" />
+    <orderEntry type="library" name="L2Dwidget" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

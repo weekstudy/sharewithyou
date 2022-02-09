@@ -66,7 +66,7 @@
             </div>
         </div>
         {# 在移动端使用的样式#}
-        {% include 'unkownblock.html' %}
+{#        {% include 'unkownblock.html' %}#}
     </div>
 {% endblock left_column %}
 
@@ -106,14 +106,14 @@
             </div>
             <!-- 文章标签 -->
             <div class="form-group">
-                <label for="tags">Label</label>
+                <label for="tags">Tags</label>
                 <input type="text" class="form-control col-3" id="tags" name="tags">
             </div>
             <!-- 文章正文 -->
             <div class="form-group">
                 <label for="body">文章正文</label>
                 <!-- 文本区域 -->
-                <textarea type="text" class="form-control" id="body" name="body" rows="12"></textarea>
+                <textarea type="text" class="form-control" id="body" name="body" rows="20"></textarea>
             </div>
             <!-- 提交按钮 -->
             <button type="submit" class="btn btn-primary">完成</button>

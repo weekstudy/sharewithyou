@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from articlesapp.models import ArticlePost
 
+from mptt.models import MPTTModel, TreeForeignKey
+
 
 EMOJI_LIST = [':speak-no-evil_monkey:', ':monkey_face:', ':monkey:', ':dog_face:', ':dog:', ':poodle:', ':wolf:',
               ':cat_face:', ':grinning_cat:', ':grinning_cat_with_smiling_eyes:', ':pouting_cat:', ':cat:',
@@ -48,7 +50,22 @@ class Comment(models.Model):
     #     on_delete=models.CASCADE,
     #     related_name='comments'
     # )
-
+    # parent = TreeForeignKey(
+    #     'self',
+    #     on_delete=models.CASCADE,
+    #     null=True,
+    #     blank=True,
+    #     related_name='children'
+    # )
+    # 新增，记录二级评论回复给谁, str
+    # reply_to = models.ForeignKey(
+    #     User,
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.CASCADE,
+    #     related_name='replyers'
+    # )
+    # critic是评论的发布者
     critic = models.CharField(max_length=100, default='A')
     # body = models.TextField()
     # 修改为富文本编辑器
@@ -57,6 +74,9 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ('created',)
+
+    # class MPTTMeta:
+    #     order_insertion_by = ['created']
 
     def __str__(self):
         return self.body[:20]

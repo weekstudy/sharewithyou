@@ -63,7 +63,6 @@ class Category(models.Model):
             return Http404('当前目录没有')
 
 
-
 class ArticlePost(models.Model):
     # 应该要有封面图片的路径
     author = models.ForeignKey(User, on_delete=models.CASCADE)

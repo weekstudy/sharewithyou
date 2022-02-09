@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_static_fontawesome',
     'ckeditor',  # 富文本编辑器
-    # 'mptt',  # 多级评论
+    'mptt',  # 多级评论
     'taggit',  # 标签
     'homeapp',
     'articlesapp',

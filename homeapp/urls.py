@@ -20,6 +20,7 @@ app_name = 'homeapp'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('js/', views.js, name='js'),
     path('archives/', views.archives, name='archives'),
     re_path(r'^archives/[0-9]{4}/[0-9]*', views.archives_by_year_month, name='archives_by_year_month'),
     # re_path(r'^archives/[0-9]{4}/[0-9]+/$', views.archives_by_month, name='archives_by_month'),

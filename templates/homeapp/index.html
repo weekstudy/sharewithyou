@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block left_column %}
-    <div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1">
+    <div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1">
         <div class="card widget" data-type="profile"
              style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
             <div class="card-content">
@@ -64,8 +64,8 @@
                 </div>
             </div>
         </div>
-        {# 在移动端使用的样式#}
-        {% include 'unkownblock.html' %}
+        {#todo 在移动端使用的样式未做#}
+{#      {% include 'unkownblock.html' %}#}
     </div>
 {% endblock left_column %}
 
@@ -95,6 +95,7 @@
                             <a class="link-muted"
                                href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>
                         </h1>
+
                         <div class="article-meta is-size-7 is-uppercase level is-mobile">
                             <div class="level-left">
                                 <span class="level-item ">author:{{ article.author }}</span>
@@ -119,7 +120,8 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="content"><p>{{ article.body|slice:'100' }}</p></div>
+
+                        <div class="content"><p>{{ article.body|safe|slice:'100'}}</p></div>
                         <a class="article-more button is-small is-size-7"
                            href="{% url 'articlesapp:show_article' article.id %}">Read more</a>
                     </article>
@@ -246,24 +248,15 @@
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
                                 <span class="searchbox-result-title"> {{ article.title }}</span>
-                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
-                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
-                                <span class="searchbox-result-preview">{{ article.body|slice:'100' }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ article.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ article.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-preview">{{ article.body|safe|slice:'100' }}</span>
                             </span>
                         </a>
 
                         {% endfor %}
                     </section>
-                    <section class="searchbox-result-section">
-                        <header>Pages</header>
-                        <a class="searchbox-result-item" href="{% url 'homeapp:home' %}">
-                            <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
-                            <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">(Untitled)</span>
-                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for Blog. Preview | Documentation | D</span>
-                            </span>
-                        </a>
-                    </section>
+
                     <section class="searchbox-result-section">
                         <header>Categories</header>
                          {% for cate_key, article_info in  cate_articles.items %}
@@ -292,3 +285,5 @@
         </div>
     </div>
 {% endblock search %}
+
+
