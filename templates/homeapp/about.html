@@ -307,18 +307,20 @@
                     </script>
                 </div>
                 <div class="article-licensing box">
-                    <div class="licensing-title"><p><a
-                            href="http://ppoffice.github.io/hexo-theme-icarus/about/index.html">http://ppoffice.github.io/hexo-theme-icarus/about/index.html</a>
-                    </p></div>
+                    <div class="licensing-title">
+                        <p>
+                        <a href="https://github.com/weekstudy">https://github.com/weekstudy</a>
+                        </p>
+                    </div>
                     <div class="licensing-meta level is-mobile">
                         <div class="level-left">
                             <div class="level-item is-narrow">
                                 <div><h6>Author</h6>
-                                    <p>PPOffice</p></div>
+                                    <p>weekstudy</p></div>
                             </div>
                             <div class="level-item is-narrow">
                                 <div><h6>Posted on</h6>
-                                    <p>2021-09-06</p></div>
+                                    <p>2020-09-06</p></div>
                             </div>
                             <div class="level-item is-narrow">
                                 <div><h6>Licensed under</h6>
@@ -367,56 +369,6 @@
         </div><!--!--><!--!--></div>
 {% endblock mid_column %}
 
-{#{% block right-column %}#}
-{#    <div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3">#}
-{#        <div class="card widget" data-type="recent-posts"#}
-{#             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">#}
-{#            <div class="card-content"><h3 class="menu-label">Recents</h3>#}
-{#                {% for article in recent_articles %}#}
-{#                    <article class="media">#}
-{#                        {% if article.avatar_svg %}#}
-{#                            <figure class="media-left">#}
-{#                                <a class="image" href="{% url 'articlesapp:show_article' article.id %}">#}
-{#                                    <img src="{{ article.avatar_svg.url }}"#}
-{#                                         alt="{{ article.title }}"></a>#}
-{#                            </figure>#}
-{#                        {% endif %}#}
-{#                        <div class="media-content">#}
-{#                            <p class="title"><a#}
-{#                                    href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>#}
-{#                            </p>#}
-{#                            <p class="date">{{ article.author }} </p>#}
-{##}
-{#                            <p class="date">{{ article.created|date:"Y-m-d" }} </p>#}
-{#                        </div>#}
-{#                    </article>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="card widget" data-type="archives"#}
-{#             style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">#}
-{#            <div class="card-content">#}
-{#                <div class="menu"><h3 class="menu-label">Archives</h3>#}
-{#                    <ul class="menu-list">#}
-{#                        {% for month,art in info_by_month_years.items %}#}
-{#                            <li>#}
-{#                                <a class="level is-mobile" href="/archives/{{ art.1 }}/{{ art.0 }}">#}
-{#                        <span class="level-start">#}
-{#                            <span class="level-item">{{ month }} {{ art.1 }}</span>#}
-{#                        </span>#}
-{#                                    <span class="level-end">#}
-{#                            <span class="level-item tag">{{ art.2 }}</span>#}
-{#                        </span>#}
-{#                                </a>#}
-{#                            </li>#}
-{#                        {% endfor %}#}
-{#                    </ul>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        {% include 'tagsblock.html' %}#}
-{#    </div>#}
-{#{% endblock right-column %}#}
 
 {% block footer %}
     {% include 'footer.html' %}
