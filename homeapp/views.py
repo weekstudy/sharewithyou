@@ -336,7 +336,7 @@ def get_paginator(request, articles, page_per=5):
     """
     new_articls=[]
     for i in articles:
-        i.body = markdown.markdown(i.body,
+        i.body = markdown.markdown(i.body[:100],
                                      extensions=[
                                          # 包含 缩写、表格等常用扩展
                                          'markdown.extensions.extra',

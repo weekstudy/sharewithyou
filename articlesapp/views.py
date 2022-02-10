@@ -66,6 +66,22 @@ def get_cate_articles():
 
     return cate_articles
 
+def transform_md(request, articles):
+    new_articls = []
+    for i in articles:
+        # print('=====',i.body[:100])
+        i.body = markdown.markdown(i.body[:100],
+                                   extensions=[
+                                       # 包含 缩写、表格等常用扩展
+                                       'markdown.extensions.extra',
+                                       # 语法高亮扩展
+                                       'markdown.extensions.codehilite',
+                                       'markdown.extensions.toc',
+                                   ])
+        # i.body = md.convert(article.body)
+        new_articls.append(i)
+    return new_articls
+
 
 # Create your views here.
 def article_list(request):
@@ -114,6 +130,7 @@ def article_list(request):
     order = request.GET.get('order')
     order = 'normal'
     # 每页显示 1 篇文章
+    article_list = transform_md(request, article_list)
     paginator = Paginator(article_list, 4)
     # 获取 url 中的页码
     page = request.GET.get('page', 1)

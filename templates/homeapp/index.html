@@ -121,7 +121,7 @@
                             </div>
                         </div>
 
-                        <div class="content"><p>{{ article.body|safe|slice:'100'}}</p></div>
+                        <div class="content"><p>{{ article.body|safe}}</p></div>
                         <a class="article-more button is-small is-size-7"
                            href="{% url 'articlesapp:show_article' article.id %}">Read more</a>
                     </article>

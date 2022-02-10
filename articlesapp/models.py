@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse,path
 
 from taggit.managers import TaggableManager
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -67,7 +67,10 @@ class ArticlePost(models.Model):
     # 应该要有封面图片的路径
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
+    # 这里改为富文本编辑器
     body = models.TextField()
+    # body = RichTextField()
+
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     # 增加一个浏览量字段
