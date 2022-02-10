@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 .idea/
+config.json
+./utils/logo.py
 *.sql
 # C extensions
 *.so

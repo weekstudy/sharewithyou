@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="601" height="417" version="1.1"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:cc="http://creativecommons.org/ns#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Pythagoras tree</title>
+	<metadata>
+		<rdf:RDF>
+			<cc:Work
+				rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type
+					rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title>Pythagoras tree</dc:title>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>Guillaume Jacquenot</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<cc:license
+						rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+			</cc:Work>
+			<cc:License
+				rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+				<cc:permits
+					rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits
+					rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits
+					rdf:resource="http://creativecommons.org/ns#Distribution"/>
+				<cc:requires
+					rdf:resource="http://creativecommons.org/ns#Notice"/>
+				<cc:requires
+					rdf:resource="http://creativecommons.org/ns#Attribution"/>
+				<cc:prohibits
+					rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+				<cc:permits
+					rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+				<cc:requires
+					rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+	<defs>
+		<rect width="100" height="100" 
+			x="0" y="0"
+			style="fill-opacity:1;stroke:#00d900;stroke-opacity:1"
+			id="squa"
+		/>
+	</defs>
+	<g transform="translate(350 300) rotate(180) " >
+		<g style="fill:#ffff66;" >
+			<use xlink:href="#squa" transform="translate(+000.00000 -100.00000) rotate(0.0) scale(1.000000)" />
+		</g>
+		<g style="fill:#e3f166;" >
+			<use xlink:href="#squa" transform="translate(+000.00000 +000.00000) rotate(45.0) scale(0.707107)" />
+			<use xlink:href="#squa" transform="translate(+050.00000 +050.00000) rotate(315.0) scale(0.707107)" />
+		</g>
+		<g style="fill:#c7e366;" >
+			<use xlink:href="#squa" transform="translate(-050.00000 +050.00000) rotate(90.0) scale(0.500000)" />
+			<use xlink:href="#squa" transform="translate(-050.00000 +100.00000) rotate(0.0) scale(0.500000)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +100.00000) rotate(0.0) scale(0.500000)" />
+			<use xlink:href="#squa" transform="translate(+150.00000 +100.00000) rotate(270.0) scale(0.500000)" />
+		</g>
+		<g style="fill:#aad466;" >
+			<use xlink:href="#squa" transform="translate(-100.00000 +050.00000) rotate(135.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +075.00000) rotate(45.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(-050.00000 +150.00000) rotate(45.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(-025.00000 +175.00000) rotate(315.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +150.00000) rotate(45.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(+125.00000 +175.00000) rotate(315.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(+200.00000 +100.00000) rotate(315.0) scale(0.353553)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +075.00000) rotate(225.0) scale(0.353553)" />
+		</g>
+		<g style="fill:#8ec666;" >
+			<use xlink:href="#squa" transform="translate(-125.00000 +025.00000) rotate(180.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +025.00000) rotate(90.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +100.00000) rotate(90.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +125.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(-075.00000 +175.00000) rotate(90.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(-075.00000 +200.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +200.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +200.00000) rotate(270.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +175.00000) rotate(90.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +200.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+150.00000 +200.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+175.00000 +200.00000) rotate(270.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +125.00000) rotate(0.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +125.00000) rotate(270.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +050.00000) rotate(270.0) scale(0.250000)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +025.00000) rotate(180.0) scale(0.250000)" />
+		</g>
+		<g style="fill:#71b866;" >
+			<use xlink:href="#squa" transform="translate(-125.00000 +000.00000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-137.50000 -012.50000) rotate(135.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-175.00000 +025.00000) rotate(135.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +037.50000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-175.00000 +100.00000) rotate(135.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +112.50000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +150.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-137.50000 +162.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-100.00000 +175.00000) rotate(135.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +187.50000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-075.00000 +225.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(-062.50000 +237.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +225.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+012.50000 +237.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+050.00000 +200.00000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +187.50000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+050.00000 +175.00000) rotate(135.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +187.50000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +225.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+087.50000 +237.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+150.00000 +225.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+162.50000 +237.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+200.00000 +200.00000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +187.50000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +150.00000) rotate(45.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+237.50000 +162.50000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+275.00000 +125.00000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +112.50000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+275.00000 +050.00000) rotate(315.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +037.50000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 -000.00000) rotate(225.0) scale(0.176777)" />
+			<use xlink:href="#squa" transform="translate(+237.50000 -012.50000) rotate(135.0) scale(0.176777)" />
+		</g>
+		<g style="fill:#55aa66;" >
+			<use xlink:href="#squa" transform="translate(-112.50000 -012.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 -025.00000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 -025.00000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-162.50000 -025.00000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +012.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +012.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +050.00000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +062.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +087.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +087.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +125.00000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +137.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-162.50000 +162.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-162.50000 +175.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +175.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +175.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +162.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +162.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +200.00000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +212.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +237.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-050.00000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-037.50000 +250.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +237.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +250.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +212.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +212.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +175.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +162.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +162.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +162.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +200.00000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +212.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +237.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+112.50000 +250.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +237.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+175.00000 +250.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 +250.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +212.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +212.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +175.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +162.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +162.50000) rotate(90.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +175.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +175.00000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+262.50000 +175.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +137.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +137.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +100.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +087.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +062.50000) rotate(0.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +062.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +025.00000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +012.50000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+262.50000 -012.50000) rotate(270.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+262.50000 -025.00000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 -025.00000) rotate(180.0) scale(0.125000)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 -025.00000) rotate(90.0) scale(0.125000)" />
+		</g>
+		<g style="fill:#389c66;" >
+			<use xlink:href="#squa" transform="translate(-100.00000 -012.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-093.75000 -018.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 -037.50000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-118.75000 -043.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 -037.50000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-156.25000 -043.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-175.00000 -025.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 -018.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +000.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-193.75000 -006.25000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-212.50000 +012.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +018.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-212.50000 +050.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +056.25000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +075.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-193.75000 +081.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +075.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-193.75000 +068.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-212.50000 +087.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +093.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-212.50000 +125.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +131.25000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +150.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-193.75000 +156.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-175.00000 +162.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +168.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-162.50000 +187.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-156.25000 +193.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +187.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-118.75000 +193.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-100.00000 +175.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-093.75000 +168.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +150.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-118.75000 +143.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-137.50000 +162.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 +168.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-137.50000 +200.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 +206.25000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +225.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-118.75000 +231.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-100.00000 +237.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +243.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-081.25000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-050.00000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-043.75000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-025.00000 +250.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-018.75000 +243.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-025.00000 +237.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-031.25000 +243.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(-006.25000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+031.25000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+050.00000 +250.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +243.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +225.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+068.75000 +231.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+087.50000 +212.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +206.25000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+087.50000 +175.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +168.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +150.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+068.75000 +143.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +150.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+031.25000 +143.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+012.50000 +162.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+006.25000 +168.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+012.50000 +200.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+006.25000 +206.25000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +225.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+031.25000 +231.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+050.00000 +237.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +243.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+068.75000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+106.25000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+125.00000 +250.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+131.25000 +243.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+125.00000 +237.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+118.75000 +243.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+143.75000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+175.00000 +262.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+181.25000 +268.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+200.00000 +250.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +243.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +225.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+218.75000 +231.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+237.50000 +212.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +206.25000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+237.50000 +175.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +168.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +150.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+218.75000 +143.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+200.00000 +162.50000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+193.75000 +168.75000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +187.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+218.75000 +193.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +187.50000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+256.25000 +193.75000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+275.00000 +175.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +168.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +150.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+293.75000 +156.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+312.50000 +137.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +131.25000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+312.50000 +100.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +093.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +075.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+293.75000 +068.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +075.00000) rotate(45.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+293.75000 +081.25000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+312.50000 +062.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +056.25000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+312.50000 +025.00000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +018.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 -000.00000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+293.75000 -006.25000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+275.00000 -012.50000) rotate(315.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 -018.75000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+262.50000 -037.50000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+256.25000 -043.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 -037.50000) rotate(225.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+218.75000 -043.75000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+200.00000 -025.00000) rotate(135.0) scale(0.088388)" />
+			<use xlink:href="#squa" transform="translate(+193.75000 -018.75000) rotate(45.0) scale(0.088388)" />
+		</g>
+		<g style="fill:#1c8e66;" >
+			<use xlink:href="#squa" transform="translate(-093.75000 -006.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 -006.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 -025.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 -031.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 -043.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 -050.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 -043.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-162.50000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-168.75000 -050.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 -031.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 -031.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 -012.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 -006.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 -006.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 -012.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 -012.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 -012.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +006.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +006.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +025.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +031.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +043.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +043.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +062.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +068.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 +081.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 +087.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +087.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +087.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +068.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +062.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-200.00000 +062.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 +062.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +081.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +081.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +100.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +106.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-218.75000 +118.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +118.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +137.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-225.00000 +143.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-206.25000 +162.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +162.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-181.25000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +175.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-187.50000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-168.75000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-168.75000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-093.75000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +181.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-087.50000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +143.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-125.00000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 +137.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +175.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-143.75000 +193.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +212.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-150.00000 +218.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-131.25000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-106.25000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +250.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-112.50000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-093.75000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-093.75000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-075.00000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-068.75000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-056.25000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-056.25000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-037.50000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-031.25000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-018.75000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +256.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-012.50000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-031.25000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-037.50000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-037.50000 +250.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-037.50000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-018.75000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(-018.75000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+006.25000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+018.75000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+018.75000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +256.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+081.25000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +218.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +218.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +193.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +181.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+100.00000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+081.25000 +143.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+081.25000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+062.50000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +137.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +143.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+025.00000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+018.75000 +137.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+006.25000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +175.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+006.25000 +193.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +212.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+000.00000 +218.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+018.75000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+018.75000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+043.75000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +250.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+037.50000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+056.25000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+075.00000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+081.25000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+093.75000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+112.50000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+118.75000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+131.25000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +256.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+137.50000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+118.75000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+112.50000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+112.50000 +250.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+112.50000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+131.25000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+131.25000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+150.00000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+156.25000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+168.75000 +268.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+168.75000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 +275.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+193.75000 +275.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +256.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +256.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +231.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +231.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +237.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 +237.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +218.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +218.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +193.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +181.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 +143.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 +137.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +137.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+193.75000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 +175.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+225.00000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +193.75000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+262.50000 +200.00000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+268.75000 +200.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +181.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +181.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +156.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +156.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +162.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +162.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 +162.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +143.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +143.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +125.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +118.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +106.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +106.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +087.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +081.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 +068.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 +062.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 +062.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +062.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +081.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 +087.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+300.00000 +087.50000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 +087.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +068.75000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +068.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +050.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +043.75000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+318.75000 +031.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +031.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +012.50000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+325.00000 +006.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 -006.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+306.25000 -012.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 -012.50000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 -012.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+281.25000 -006.25000) rotate(0.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 -006.25000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 -025.00000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+287.50000 -031.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+268.75000 -043.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+268.75000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+250.00000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+243.75000 -050.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 -043.75000) rotate(270.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+231.25000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+212.50000 -050.00000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+206.25000 -050.00000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+193.75000 -031.25000) rotate(180.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 -031.25000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 -012.50000) rotate(90.0) scale(0.062500)" />
+			<use xlink:href="#squa" transform="translate(+187.50000 -006.25000) rotate(0.0) scale(0.062500)" />
+		</g>
+	</g>
+</svg>

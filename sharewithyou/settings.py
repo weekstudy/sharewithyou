@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import time
 import os
+import json
 import mimetypes
 
 mimetypes.add_type("image/svg+xml", ".svg", True)
@@ -24,8 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-727(0a=0)(@&4$dh8#cxsnpyu$!w=(l3ob%lrlc7ftc5fotj42'
+with open('./config.json', 'r') as fr:
+    config = json.load(fr)
 
+SECRET_KEY = config['SECRET_KEY']
+
+# SECRET_KEY = 'django-insecure-727(0a=0)(@&4$dh8#cxsnpyu$!w=(l3ob%lrlc7ftc5fotj42'
+# print(SECRET_KEY)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -86,17 +92,17 @@ WSGI_APPLICATION = 'sharewithyou.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Blog2',
-        'USER': 'root',
-        'PASSWORD': 'mac123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+DATABASES = config['DATABASES']
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Blog2',
+#         'USER': 'root',
+#         'PASSWORD': 'mac123',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
