@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block left_column %}
-    <div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1">
+    <div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1">
         <div class="card widget" data-type="profile"
              style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
             <div class="card-content">
@@ -56,34 +56,37 @@
         </div>
         {# 在移动端使用的样式#}
 {#       todo tags {% include 'unkownblock.html' %}#}
-{
+
 
     </div>
 {% endblock left_column %}
 
 {% block mid_column %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css-theme/white/bootstrap.min.css' %}">
+
     <div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen">
+
         <form method="post" action="." enctype="multipart/form-data">
             <!-- Django中需要POST数据的地方都必须有csrf_token -->
             {% csrf_token %}
             <!-- 文章标题图 -->
             <div class="form-group">
                 {% if article.avatar_svg %}
-                    <label for="avatar_svg">标题图</label><br>
+{#                    <label for="avatar_svg">标题图</label><br>#}
                     <div class="card-image"><span class="image is-7by3">
-                         <img class="fill" src="{{ article.avatar_svg.url }}"
-                         alt="{{ article.title }}"></span>
+                         <img  class="fill" src="{{ article.avatar_svg.url }}" alt="{{ article.title }}"></span>
                     </div>
-                    {% else %}
-                     <label for="avatar_svg">当前文章无标题图</label>
+
+                {% else %}
+                    <label for="avatar_svg">当前文章无标题图</label>
                 {% endif %}
-                <br>
-                <input type="file" class="form-control-file" name="avatar_svg" id="avatar_svg">
+                    <br>
+                    <input type="file" class="form-control-file" name="avatar_svg" id="avatar_svg">
             </div>
 
             <!-- 文章标题 -->
-            <div class="form-group">
+{#            <link rel="stylesheet" type="text/css" href="{% static 'css-theme/white/bootstrap.min.css' %}">#}
+            <link rel="stylesheet" type="text/css" href="{% static 'css-theme/white/article/create.css' %}">
+            <div class="form-group" style="margin-bottom: 15px">
                 <!-- 标签 -->
                 <label for="title">文章标题</label>
                 <!-- 文本框 -->
@@ -115,7 +118,7 @@
             <div class="form-group">
                 <label for="body">文章正文</label>
                 <!-- 文本区域 -->
-                <textarea type="text" class="form-control" id="body" name="body" rows="12">{{ article.body }}</textarea>
+                <textarea type="text" class="form-control" id="body" name="body" rows="20">{{ article.body }}</textarea>
             </div>
             <!-- 提交按钮 -->
             <button type="submit" class="btn btn-primary">完成</button>

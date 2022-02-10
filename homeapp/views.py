@@ -336,6 +336,7 @@ def get_paginator(request, articles, page_per=5):
     """
     new_articls=[]
     for i in articles:
+
         i.body = markdown.markdown(i.body[:100],
                                      extensions=[
                                          # 包含 缩写、表格等常用扩展
@@ -345,6 +346,7 @@ def get_paginator(request, articles, page_per=5):
                                          'markdown.extensions.toc',
                                      ])
         # i.body = md.convert(article.body)
+
         new_articls.append(i)
 
     paginator = Paginator(new_articls, page_per)
@@ -370,10 +372,12 @@ def get_params(request):
 
 def home(request):
     context = get_context(request)
+
     all_articles = ArticlePost.objects.all()
     search = request.GET.get('search', None)
     cur_page_articles, _ = get_paginator(request, all_articles, 6)
     context['cur_page_articles'] = cur_page_articles
+
 
     if search:
         context = search_keyword(request)

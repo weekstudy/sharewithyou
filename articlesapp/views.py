@@ -327,6 +327,7 @@ def article_update(request, id):
 
     # 获取需要修改的具体文章对象
     article = ArticlePost.objects.get(id=id)
+    orig_avatar = article.avatar_svg
     # 过滤非作者的用户
     if request.user != article.author:
         return HttpResponse("抱歉，你无权修改这篇文章。")
@@ -346,9 +347,12 @@ def article_update(request, id):
             # tmp = article_post_form.save(commit=False)
             article.title = request.POST['title']
             article.body = request.POST['body']
-            # 这个是把数据块赋值了吗？？
-            article.avatar_svg = request.FILES.get('avatar_svg')
-
+            new_avatar = request.FILES.get('avatar_svg')
+            if new_avatar is not None:
+                # 这个是把数据块赋值了吗？？
+                article.avatar_svg = request.FILES.get('avatar_svg')
+            else:
+                article.avatar_svg = orig_avatar
             # print('=====330', request.POST.get('tags'))
             # TODO 修改标签感觉要考虑是中文分割符还是英文分割符
             article.tags.set(request.POST.get('tags').split(','), clear=True)
