@@ -389,7 +389,7 @@
                         <header>Posts</header>
                         {% for article in article_list|slice:":5" %}
                         <a class="searchbox-result-item"
-                           href="{% url 'articlesapp:show_article' article.id%}">
+                           href="{% url 'articlesapp:show_article' article.title %}">
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
                                 <span class="searchbox-result-title"> {{ article.title }}</span>

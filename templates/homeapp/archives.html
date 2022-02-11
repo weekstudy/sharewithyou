@@ -93,7 +93,7 @@
                                         </p>
                                     </div>
                                     <a class="article-more button is-small is-size-7"
-                                       href="{% url 'articlesapp:show_article' article_year.id %}">Read more</a>
+                                       href="{% url 'articlesapp:show_article' article_year.title %}">Read more</a>
                                 </article>
                             {% endfor %}
 
@@ -140,13 +140,13 @@
                     <article class="media">
                         {% if article.avatar_svg %}
                             <figure class="media-left">
-                                <a class="image" href="{% url 'articlesapp:show_article' article.id %}">
+                                <a class="image" href="{% url 'articlesapp:show_article' article.title %}">
                                     <img src="{{ article.avatar_svg.url }}"
                                          alt="{{ article.title }}"></a>
                             </figure>
                         {% endif %}
                        <div class="media-content">
-                            <p class="title"><a href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>
+                            <p class="title"><a href="{% url 'articlesapp:show_article' article.title %}">{{ article.title }}</a>
                             </p>
                             <p class="date">{{ article.author }} </p>
 
@@ -220,7 +220,7 @@
                         <header>Posts</header>
                         {% for article in article_list|slice:":5" %}
                         <a class="searchbox-result-item"
-                           href="{% url 'articlesapp:show_article' article.id%}">
+                           href="{% url 'articlesapp:show_article' article.title %}">
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
                                 <span class="searchbox-result-title"> {{ article.title }}</span>

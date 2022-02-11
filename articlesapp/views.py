@@ -158,7 +158,7 @@ def article_list(request):
     return render(request, 'article/all_articles.html', context)
 
 
-def show_article(request, id):
+def show_article(request, title):
     """
     展示文章详情
     :param request:
@@ -167,11 +167,12 @@ def show_article(request, id):
     """
 
     context = get_context(request)
-
-    # print('id--152---', id)
-    article = ArticlePost.objects.get(id=id)
+    url = request.path.strip().split('/')
+    # print('id--152---', url)
+    # article = ArticlePost.objects.get(id=id)
+    article = ArticlePost.objects.get(title=title)
     # 取出文章评论
-    comments = Comment.objects.filter(article=id)
+    comments = Comment.objects.filter(article=article.id)
 
     for comment in comments:
         comment.critic = emoji.emojize(comment.critic)
@@ -210,8 +211,8 @@ def show_article(request, id):
     )
     article.body = md.convert(article.body)
     # 因为文章倒序排列
-    next_article = ArticlePost.objects.filter(id__gt=id).last()
-    previous_article = ArticlePost.objects.filter(id__lt=id).last()
+    next_article = ArticlePost.objects.filter(id__gt=article.id).last()
+    previous_article = ArticlePost.objects.filter(id__lt=article.id).last()
     # TODO 为啥要实例化
     comment_form = CommentForm()
 

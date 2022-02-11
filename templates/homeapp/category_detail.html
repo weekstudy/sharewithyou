@@ -93,7 +93,7 @@
                     <!--如果使用article.avatar_svg.url进行判断会保错 -->
                     {% if article.avatar_svg %}
                         <div class="card-image">
-                            <a class="image is-7by3" href="{% url 'articlesapp:show_article' article.id %}">
+                            <a class="image is-7by3" href="{% url 'articlesapp:show_article' article.title %}">
                                 <img class="fill" style="width: 80%" src="{{ article.avatar_svg.url }}"
                                      alt="{{ article.title }}">
                             </a>
@@ -102,7 +102,7 @@
                     <article class="card-content article" role="article">
                         <h1 class="title is-3 is-size-4-mobile">
                             <a class="link-muted"
-                               href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>
+                               href="{% url 'articlesapp:show_article' article.title %}">{{ article.title }}</a>
                         </h1>
                         <div class="article-meta is-size-7 is-uppercase level is-mobile">
                             <div class="level-left">
@@ -179,14 +179,14 @@
                     <article class="media">
                         {% if article.avatar_svg %}
                             <figure class="media-left">
-                                <a class="image" href="{% url 'articlesapp:show_article' article.id %}">
+                                <a class="image" href="{% url 'articlesapp:show_article' article.title %}">
                                     <img src="{{ article.avatar_svg.url }}"
                                          alt="{{ article.title }}"></a>
                             </figure>
                         {% endif %}
                         <div class="media-content">
                             <p class="title"><a
-                                    href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>
+                                    href="{% url 'articlesapp:show_article' article.title %}">{{ article.title }}</a>
                             </p>
                             <p class="date">{{ article.author }} </p>
 
@@ -257,7 +257,7 @@
                         <header>Posts</header>
                         {% for article in article_list|slice:":5" %}
                         <a class="searchbox-result-item"
-                           href="{% url 'articlesapp:show_article' article.id%}">
+                           href="{% url 'articlesapp:show_article' article.title %}">
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
                                 <span class="searchbox-result-title"> {{ article.title }}</span>

@@ -17,7 +17,8 @@ app_name = 'articlesapp'
 urlpatterns = [
     path('upload/', views.upload, name='upload'),
     path('articles/', views.article_list, name='articles'),
-    path('show-article/<int:id>/', views.show_article, name='show_article'),
+    # path('show-article/<int:id>/', views.show_article, name='show_article'),
+    path('show-article/<str:title>/', views.show_article, name='show_article'),
     path('articles/create/', views.article_create, name='article_create'),
     # 删除文章
     path('articles/delete/<int:id>/', views.article_delete, name='article_delete'),

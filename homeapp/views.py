@@ -243,6 +243,7 @@ def archives(request):
         context['cur_page_articles'] = cur_page_articles
         return render(request, "homeapp/index.html", context)
     else:
+        # print('=====',context)
         return render(request, "homeapp/archives.html", context)
 
 

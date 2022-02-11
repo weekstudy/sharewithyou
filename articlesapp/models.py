@@ -117,7 +117,7 @@ class ArticlePost(models.Model):
 
     # 是在用户评论时调用，用来获取文章地址，进行重定向
     def get_absolute_url(self):
-        return reverse('articlesapp:show_article', args=[self.id])
+        return reverse('articlesapp:show_article', args=[self.title])
 
     class Meta:
         ordering = ('-created',)
