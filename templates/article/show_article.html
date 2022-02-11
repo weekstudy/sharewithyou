@@ -107,7 +107,7 @@
                         <span class="level-item fas fa-eye">&nbsp;{{ article.total_views }}</span>
                         {% if user.is_authenticated and article.author == user %}
                             <span class="level-item"><a
-                                    href="{% url "articlesapp:article_update" article.id %}">edit</a></span>
+                                    href="{% url "articlesapp:article_update" article.title %}">edit</a></span>
                             <script src="{% static 'js/jquery_3.1.1.js' %}"></script>
                             <script src="{% static 'layer/layer.js' %}"></script>
                             <span class="level-item"><a href="#" onclick="confirm_delete()">delete</a></span>
@@ -317,7 +317,7 @@
                 // 点击确定按钮后调用的回调函数
                 yes: function (index, layero) {
                     // 指定应当前往的 url
-                    location.href = '{% url "articlesapp:article_delete" article.id %}'
+                    location.href = '{% url "articlesapp:article_delete" article.title %}'
                 },
             })
         }
@@ -335,127 +335,55 @@
         <div class="searchbox-container">
             <div class="searchbox-header">
                 <div class="searchbox-input-container">
-                    <form method="get">
-                        <input class="searchbox-input" name="search" type="text" placeholder="Type something...">
+                    <form method="get" >
+                        <input class="searchbox-input" name="search" type="text" placeholder="Type something..." >
                     </form>
                 </div>
                 <a class="searchbox-close" href="javascript:;">×</a></div>
-            <div class="searchbox-body">
-                <section class="searchbox-result-section">
-                    <header>Posts</header>
-                    {% for item in article_list %}
+                <div class="searchbox-body">
+                    <section class="searchbox-result-section">
+                        <header>Posts</header>
+                        {% for article in article_list|slice:":5" %}
                         <a class="searchbox-result-item"
-                           href="{% url 'articlesapp:show_article' item.id %}">
+                           href="{% url 'articlesapp:show_article' article.title %}">
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
-                                <span class="searchbox-result-title"> {{ item.title }}</span>
-                                <span class="searchbox-result-title">AUTHOR: {{ item.author|upper }}&nbsp;&nbsp;
-                                    POSTED:{{ item.created|date:"Y-m-d" }}</span>
-                                <span class="searchbox-result-title"> </span>
-                                <span class="searchbox-result-preview">{{ item.body|slice:'100' }}</span>
+                                <span class="searchbox-result-title"> {{ article.title }}</span>
+                                <span class="searchbox-result-title">AUTHOR: {{ article.author|upper }}&nbsp;&nbsp;
+                                    POSTED:{{ article.created|date:"Y-m-d" }}</span>
+                                <span class="searchbox-result-preview">{{ article.body|safe|slice:'100' }}</span>
                             </span>
                         </a>
 
-                    {% endfor %}
-                </section>
-                <section class="searchbox-result-section">
-                    <header>Pages</header>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/about/index.html">
-                        <span class="searchbox-result-icon"><i class="fa fa-file"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">(Untitled)</span>
-                                <span class="searchbox-result-preview">A simple, delicate, and modern theme for the static site generator Hexo. Preview | Documentation | D</span>
-                            </span>
-                    </a>
-                </section>
-                <section class="searchbox-result-section">
-                    <header>Categories</header>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Configuration/">
-                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Configuration
-                                    <span class="searchbox-result-title-secondary">(Configuration)</span>
-                                </span>
+                        {% endfor %}
+                    </section>
 
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/">
-                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Plugins
-                                <span class="searchbox-result-title-secondary">(Plugins)</span>
-                            </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Search/">
-                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Search
-                                    <span class="searchbox-result-title-secondary">(Plugins/Search)</span>
+                    <section class="searchbox-result-section">
+                        <header>Categories</header>
+                         {% for cate_key, article_info in  cate_articles.items %}
+                            <a class="searchbox-result-item" href="/categories/{{ article_info.2 }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
+                                    <span class="searchbox-result-content">
+                                        <span class="searchbox-result-title">{{ cate_key }}</span>
+                                    </span>
+                            </a>
+                         {% endfor %}
+                    </section>
+                    <section class="searchbox-result-section">
+                        <header>Tags</header>
+                        {% for tag_name,article_info in tags_articles.items %}
+                            <a class="searchbox-result-item" href="/tags/{{ tag_name }}">
+                                <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
+                                <span class="searchbox-result-content">
+                                    <span class="searchbox-result-title">{{ tag_name }}
+                                    </span>
                                 </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Donation/">
-                        <span class="searchbox-result-icon"><i class="fa fa-folder"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Donation
-                                    <span class="searchbox-result-title-secondary">(Plugins/Donation)</span>
-                                </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/categories/Plugins/Share/">
-                            <span class="searchbox-result-icon">
-                                <i class="fa fa-folder"></i>
-                            </span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Share
-                                    <span class="searchbox-result-title-secondary">(Plugins/Share)</span>
-                                </span>
-                            </span>
-                    </a>
-                </section>
-                <section class="searchbox-result-section">
-                    <header>Tags</header>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Demo/">
-                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">Demo
-                                    <span class="searchbox-result-title-secondary">(Demo)</span>
-                                </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Icarus-User-Guide/">
-                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">
-                                    Icarus User Guide
-                                    <span class="searchbox-result-title-secondary">(Icarus-User-Guide)</span>
-                                </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item" href="/hexo-theme-icarus/tags/Getting-Started/">
-                        <span class="searchbox-result-icon"> <i class="fa fa-tag"></i></span>
-                        <span class="searchbox-result-content">
-                                 <span class="searchbox-result-title">
-                                    Getting Started
-                                     <span class="searchbox-result-title-secondary">(Getting-Started)</span>
-                                </span>
-                            </span>
-                    </a>
-                    <a class="searchbox-result-item"
-                       href="/hexo-theme-icarus/tags/Icarus%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97/">
-                        <span class="searchbox-result-icon"><i class="fa fa-tag"></i></span>
-                        <span class="searchbox-result-content">
-                                <span class="searchbox-result-title">
-                                    Icarus用户指南
-                                    <span class="searchbox-result-title-secondary">(Icarus用户指南)</span>
-                                </span>
-                            </span>
-                    </a>
-                </section>
+                            </a>
+                        {% endfor %}
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock search %}
 

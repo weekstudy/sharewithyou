@@ -75,7 +75,7 @@
                      style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
                     <div class="card-image">
                         {% if article.avatar_svg %}
-                            <a class="image is-7by3" href="{% url 'articlesapp:show_article' article.id %}" >
+                            <a class="image is-7by3" href="{% url 'articlesapp:show_article' article.title %}" >
                                  <img class="fill" src="{{article.avatar_svg.url}}"
                                      alt="{{ article.title }}">
                         {% endif %}
@@ -86,7 +86,7 @@
                     <article class="card-content article" role="article">
                         <h1 class="title is-3 is-size-4-mobile">
                             <a class="link-muted"
-                               href="{% url 'articlesapp:show_article' article.id %}">{{ article.title }}</a>
+                               href="{% url 'articlesapp:show_article' article.title %}">{{ article.title }}</a>
                         </h1>
                         <div class="article-meta is-size-7 is-uppercase level is-mobile">
                             <div class="level-left">
@@ -115,7 +115,7 @@
                         <div class="content"><p>{{ article.body|safe}}</p></div>
 
                         <a class="article-more button is-small is-size-7"
-                           href="{% url 'articlesapp:show_article' article.id %}"> Read More</a>
+                           href="{% url 'articlesapp:show_article' article.title %}"> Read More</a>
                     </article>
                 </div>
             {% endfor %}
@@ -170,7 +170,7 @@
                         <header>Posts</header>
                         {% for article in article_list|slice:":5" %}
                         <a class="searchbox-result-item"
-                           href="{% url 'articlesapp:show_article' article.id%}">
+                           href="{% url 'articlesapp:show_article' article.title %}">
                             <span class="searchbox-result-icon"> <i class="fa fa-file"></i></span>
                             <span class="searchbox-result-content">
                                 <span class="searchbox-result-title"> {{ article.title }}</span>

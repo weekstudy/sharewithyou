@@ -227,6 +227,7 @@ def show_article(request, title):
     return render(request, 'article/show_article.html', context)
 
 
+
 def article_create(request):
     # 判断用户是否提交数据
     # cate_articles = get_cate_articles()
@@ -299,11 +300,10 @@ def article_create(request):
         # 返回模板
         return render(request, 'article/create.html', context)
 
-
 # 删文章
-def article_delete(request, id):
+def article_delete(request, title):
     # 根据 id 获取需要删除的文章
-    article = ArticlePost.objects.get(id=id)
+    article = ArticlePost.objects.get(title=title)
     # 过滤非作者的用户
     if request.user != article.author:
         return HttpResponse("抱歉，你无权删除这篇文章。")
@@ -315,7 +315,7 @@ def article_delete(request, id):
 
 
 # 更新文章
-def article_update(request, id):
+def article_update(request, title):
     """
     更新文章的视图函数
     通过POST方法提交表单，更新titile、body字段
@@ -324,10 +324,11 @@ def article_update(request, id):
     """
     cate_articles = get_cate_articles()
     total = len(ArticlePost.objects.all())
-    tmp_context = get_context(request)
+    # tmp_context = get_context(request)
 
     # 获取需要修改的具体文章对象
-    article = ArticlePost.objects.get(id=id)
+    # article = ArticlePost.objects.get(id=id)
+    article = ArticlePost.objects.get(title=title)
     orig_avatar = article.avatar_svg
     # 过滤非作者的用户
     if request.user != article.author:
@@ -361,7 +362,7 @@ def article_update(request, id):
             # print('=======329', request.FILES.get('avatar_svg', ''))
             article.save()
             # 完成后返回到修改后的文章中。需传入文章的 id 值
-            return redirect("articlesapp:show_article", id=id)
+            return redirect("articlesapp:show_article", title=article.title)
         # 如果数据不合法，返回错误信息
         else:
             return HttpResponse("表单内容有误，请重新填写。")

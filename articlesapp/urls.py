@@ -21,9 +21,9 @@ urlpatterns = [
     path('show-article/<str:title>/', views.show_article, name='show_article'),
     path('articles/create/', views.article_create, name='article_create'),
     # 删除文章
-    path('articles/delete/<int:id>/', views.article_delete, name='article_delete'),
+    path('articles/delete/<str:title>/', views.article_delete, name='article_delete'),
     # 更新文章
-    path('articles/update/<int:id>/', views.article_update, name='article_update'),
+    path('articles/update/<str:title>/', views.article_update, name='article_update'),
     path('articles/search/', views.search, name='search'),
 ]
 
