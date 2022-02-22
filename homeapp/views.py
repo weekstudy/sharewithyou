@@ -420,6 +420,7 @@ def category_detail(request):
         context = search_keyword(request)
         return render(request, "homeapp/index.html", context)
     else:
+        # print('=====',context['cur_page_articles'])
         return render(request, "homeapp/category_detail.html", context)
 
 

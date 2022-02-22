@@ -130,7 +130,7 @@
                         </div>
                         <div class="content"><p>{{ article.body|safe|slice:'100' }}</p></div>
                         <a class="article-more button is-small is-size-7"
-                           href="{% url 'articlesapp:show_article' article.id %}">Read more</a>
+                           href="{% url 'articlesapp:show_article' article.title %}">Read more</a>
                     </article>
                 </div>
             {% endfor %}
